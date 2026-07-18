@@ -13,6 +13,10 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
     maven { url = 'https://maven.minecraftforge.net/' }
+
+	//maven { url = "https://cursemaven.com" }
+	maven { url = "https://maven.terraformersmc.com/" }
+
 }
 
 fabricApi {
@@ -29,7 +33,21 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	
+	//modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {
+	//	exclude(group: "net.fabricmc")//农夫乐事 重织的依赖
+	//}
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
+
+	// Let's Do 系列前置
+	modImplementation files(
+		'libs/letsdo-API-fabric-1.2.15-fabric.jar',
+		'libs/letsdo-farm_and_charm-fabric-1.0.4.jar',
+		'libs/letsdo-candlelight-fabric-2.0.2.jar',
+		'libs/architectury-9.2.14-fabric.jar'
+	)
+
+
+
 }
 
 processResources {

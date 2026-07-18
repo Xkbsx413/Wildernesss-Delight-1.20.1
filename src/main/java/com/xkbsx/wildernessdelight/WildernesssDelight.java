@@ -1,5 +1,9 @@
 package com.xkbsx.wildernessdelight;
 
+import com.xkbsx.wildernessdelight.item.ModItems;
+import com.xkbsx.wildernessdelight.item.ModItemsGroup;
+import com.xkbsx.wildernessdelight.block.ModBlock;
+import com.xkbsx.wildernessdelight.world.tree.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -19,6 +23,11 @@ public class WildernesssDelight implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+
+		ModItemsGroup.RegisterGroups();
+		ModBlock.registerBlocks();
+		ModItems.registerItems();
+		ModWorldGeneration.register();
 		LOGGER.info("Hello Fabric world!");
 	}
 }

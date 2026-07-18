@@ -19,7 +19,7 @@
 			"com.xkbsx.wildernessdelight.WildernesssDelight"
 		],
 		"client": [
-			"com.xkbsx.wildernessdelight.WildernessDelightClient"
+			"com.xkbsx.wildernessdelight.WildernesssDelightClient"
 		],
 		"fabric-datagen": [
 			"com.xkbsx.wildernessdelight.WildernesssDelightDataGenerator"
