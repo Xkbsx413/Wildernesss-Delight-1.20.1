@@ -18,9 +18,6 @@ public class English extends FabricLanguageProvider {
            translationBuilder.add(ModBlock.CROP_DANDELION,"wild dandelion");
            translationBuilder.add("item.wildernesss-delight.crop_dandelion_block","dandelion crop");
            translationBuilder.add("item.wildernesss-delight.crop_dandelion","dandelion leaves");
-           translationBuilder.add(ModBlock.CHINESE_TOON_SPROUT,"wild toon");
-           translationBuilder.add("item.wildernesss-delight.chinese_toon_sprout_block","chinese toon sprout");
-           translationBuilder.add("item.wildernesss-delight.chinese_toon_sprout","toon leaves");
            translationBuilder.add(ModBlock.HOUTTUYNIA,"wild houttuynia");
            translationBuilder.add("item.wildernesss-delight.houttuynia_block","houttuynia");
            translationBuilder.add("item.wildernesss-delight.houttuynia","houttuynia leaves");
@@ -64,6 +61,11 @@ public class English extends FabricLanguageProvider {
            translationBuilder.add("item.wildernesss-delight.ice_flowers","ice flowers");
            translationBuilder.add(ModBlock.POTTED_ICE_FLOWERS,"potted ice flowers");
            translationBuilder.add("item.wildernesss-delight.potted_ice_flowers","potted ice flowers");
+            translationBuilder.add(ModBlock.CHINESE_TOON_LEAVES,"chinese toon leaves");
+            translationBuilder.add("item.wildernesss-delight.chinese_toon_leaves_block","chinese toon leaves");
+           translationBuilder.add(ModBlock.CHINESE_TOON_SAPLING,"chinese toon sapling");
+           translationBuilder.add("item.wildernesss-delight.chinese_toon_sapling_block","chinese toon sapling");
+           translationBuilder.add("item.wildernesss-delight.chinese_toon_sprout","toon leaves");
 
            translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight","Wilderness Delight");
     }

@@ -33,7 +33,6 @@ public class Model extends FabricModelProvider {
         //blockStateModelGenerator.registerTintableCross(ModBlock.HORSEWEEDBLOCK,BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.SHEPHERD_PURSE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.CROP_DANDELION, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlock.CHINESE_TOON_SPROUT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.HOUTTUYNIA, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.BRACKEN_FERN_SHOOT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.WILD_GARLIC, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -47,6 +46,8 @@ public class Model extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlock.TREE_OF_HEAVEN, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.BUTTERCUP, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.CUDWEED, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlock.CHINESE_TOON_LEAVES);
+        blockStateModelGenerator.registerTintableCross(ModBlock.CHINESE_TOON_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override
@@ -54,7 +55,6 @@ public class Model extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HORSEWEED, Models.GENERATED);
         itemModelGenerator.register(ModItems.SHEPHERD_PURSE, Models.GENERATED);
         itemModelGenerator.register(ModItems.CROP_DANDELION, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHINESE_TOON_SPROUT, Models.GENERATED);
         itemModelGenerator.register(ModItems.HOUTTUYNIA, Models.GENERATED);
         itemModelGenerator.register(ModItems.BRACKEN_FERN_SHOOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.WILD_GARLIC, Models.GENERATED);
@@ -68,5 +68,6 @@ public class Model extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TREE_OF_HEAVEN, Models.GENERATED);
         itemModelGenerator.register(ModItems.BUTTERCUP, Models.GENERATED);
         itemModelGenerator.register(ModItems.CUDWEED, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHINESE_TOON_SPROUT, Models.GENERATED);
     }
 }

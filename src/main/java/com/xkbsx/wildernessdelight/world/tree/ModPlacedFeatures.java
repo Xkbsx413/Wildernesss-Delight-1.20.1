@@ -9,7 +9,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.Heightmap;
 import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.HeightmapPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
@@ -18,7 +20,6 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> HORSEWEED_COVERED_LAND = of("horseweed_covered_land");
     public static final RegistryKey<PlacedFeature> SHEPHERD_PURSE_COVERED_LAND = of("shepherd_purse_covered_land");
     public static final RegistryKey<PlacedFeature> CROP_DANDELION_COVERED_LAND = of("crop_dandelion_covered_land");
-    public static final RegistryKey<PlacedFeature> CHINESE_TOON_SPROUT_COVERED_LAND = of("chinese_toon_sprout_covered_land");
     public static final RegistryKey<PlacedFeature> HOUTTUYNIA_COVERED_LAND = of("houttuynia_covered_land");
     public static final RegistryKey<PlacedFeature> BRACKEN_FERN_SHOOT_COVERED_LAND = of("bracken_fern_shoot_covered_land");
     public static final RegistryKey<PlacedFeature> WILD_GARLIC_COVERED_LAND = of("wild_garlic_covered_land");
@@ -32,6 +33,9 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> TREE_OF_HEAVEN_COVERED_LAND = of("tree_of_heaven_covered_land");
     public static final RegistryKey<PlacedFeature> BUTTERCUP_COVERED_LAND = of("buttercup_covered_land");
     public static final RegistryKey<PlacedFeature> CUDWEED_COVERED_LAND = of("cudweed_covered_land");
+    public static final RegistryKey<PlacedFeature> CHINESE_TOON_SMALL_TREE_LAND = of("chinese_toon_small_tree_land");
+    public static final RegistryKey<PlacedFeature> CHINESE_TOON_NORMAL_TREE_LAND = of("chinese_toon_normal_tree_land");
+
 
     public static void bootstrap(Registerable<PlacedFeature> featureRegisterable) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> lookup = featureRegisterable.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -39,7 +43,6 @@ public class ModPlacedFeatures {
         register(featureRegisterable, lookup, HORSEWEED_COVERED_LAND, ModConfiguredFeatures.HORSEWEED_COVERED, 7);
         register(featureRegisterable, lookup, SHEPHERD_PURSE_COVERED_LAND, ModConfiguredFeatures.SHEPHERD_PURSE_COVERED, 7);
         register(featureRegisterable, lookup, CROP_DANDELION_COVERED_LAND, ModConfiguredFeatures.CROP_DANDELION_COVERED, 7);
-        register(featureRegisterable, lookup, CHINESE_TOON_SPROUT_COVERED_LAND, ModConfiguredFeatures.CHINESE_TOON_SPROUT_COVERED, 7);
         register(featureRegisterable, lookup, HOUTTUYNIA_COVERED_LAND, ModConfiguredFeatures.HOUTTUYNIA_COVERED, 7);
         register(featureRegisterable, lookup, BRACKEN_FERN_SHOOT_COVERED_LAND, ModConfiguredFeatures.BRACKEN_FERN_SHOOT_COVERED, 7);
         register(featureRegisterable, lookup, WILD_GARLIC_COVERED_LAND, ModConfiguredFeatures.WILD_GARLIC_COVERED, 7);
@@ -53,6 +56,18 @@ public class ModPlacedFeatures {
         register(featureRegisterable, lookup, TREE_OF_HEAVEN_COVERED_LAND, ModConfiguredFeatures.TREE_OF_HEAVEN_COVERED, 7);
         register(featureRegisterable, lookup, BUTTERCUP_COVERED_LAND, ModConfiguredFeatures.BUTTERCUP_COVERED, 7);
         register(featureRegisterable, lookup, CUDWEED_COVERED_LAND, ModConfiguredFeatures.CUDWEED_COVERED, 7);
+        PlacedFeatures.register(featureRegisterable, CHINESE_TOON_SMALL_TREE_LAND,
+                lookup.getOrThrow(ModConfiguredFeatures.CHINESE_TOON_SMALL_TREE),
+                RarityFilterPlacementModifier.of(6),
+                SquarePlacementModifier.of(),
+                HeightmapPlacementModifier.of(Heightmap.Type.WORLD_SURFACE_WG),
+                BiomePlacementModifier.of());
+        PlacedFeatures.register(featureRegisterable, CHINESE_TOON_NORMAL_TREE_LAND,
+                lookup.getOrThrow(ModConfiguredFeatures.CHINESE_TOON_NORMAL_TREE),
+                RarityFilterPlacementModifier.of(8),
+                SquarePlacementModifier.of(),
+                HeightmapPlacementModifier.of(Heightmap.Type.WORLD_SURFACE_WG),
+                BiomePlacementModifier.of());
     }
 
     private static void register(Registerable<PlacedFeature> featureRegisterable,

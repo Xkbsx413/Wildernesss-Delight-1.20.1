@@ -21,9 +21,6 @@ public class ModFlowersGenerator {
                 BiomeKeys.GROVE, BiomeKeys.FOREST, BiomeKeys.WINDSWEPT_HILLS),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CROP_DANDELION_COVERED_LAND);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
-                BiomeKeys.FOREST, BiomeKeys.BIRCH_FOREST, BiomeKeys.DARK_FOREST),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHINESE_TOON_SPROUT_COVERED_LAND);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
                 BiomeKeys.SWAMP, BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.HOUTTUYNIA_COVERED_LAND);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
@@ -62,5 +59,11 @@ public class ModFlowersGenerator {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
                 BiomeKeys.WOODED_BADLANDS, BiomeKeys.MEADOW, BiomeKeys.SNOWY_TAIGA),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CUDWEED_COVERED_LAND);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
+                BiomeKeys.FOREST, BiomeKeys.WINDSWEPT_HILLS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHINESE_TOON_SMALL_TREE_LAND);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
+                BiomeKeys.FLOWER_FOREST, BiomeKeys.WINDSWEPT_FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHINESE_TOON_NORMAL_TREE_LAND);
     }
 }

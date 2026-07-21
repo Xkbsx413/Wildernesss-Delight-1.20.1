@@ -18,9 +18,6 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add(ModBlock.CROP_DANDELION, "野生蒲公英");
         translationBuilder.add("item.wildernesss-delight.crop_dandelion_block", "作物蒲公英");
         translationBuilder.add("item.wildernesss-delight.crop_dandelion", "蒲公英叶");
-        translationBuilder.add(ModBlock.CHINESE_TOON_SPROUT,"野生香椿");
-        translationBuilder.add("item.wildernesss-delight.chinese_toon_sprout_block","香椿芽");
-        translationBuilder.add("item.wildernesss-delight.chinese_toon_sprout","香椿");
         translationBuilder.add(ModBlock.HOUTTUYNIA,"野生折耳根");
         translationBuilder.add("item.wildernesss-delight.houttuynia_block","折耳根");
         translationBuilder.add("item.wildernesss-delight.houttuynia","折耳根");
@@ -64,6 +61,11 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("item.wildernesss-delight.ice_flowers","寒霜花");
         translationBuilder.add(ModBlock.POTTED_ICE_FLOWERS,"寒霜花盆栽");
         translationBuilder.add("item.wildernesss-delight.potted_ice_flowers","寒霜花盆栽");
+        translationBuilder.add(ModBlock.CHINESE_TOON_LEAVES,"香椿树叶");
+        translationBuilder.add("item.wildernesss-delight.chinese_toon_leaves_block","香椿树叶");
+        translationBuilder.add(ModBlock.CHINESE_TOON_SAPLING,"香椿树苗");
+        translationBuilder.add("item.wildernesss-delight.chinese_toon_sapling_block","香椿树苗");
+        translationBuilder.add("item.wildernesss-delight.chinese_toon_sprout","香椿");
 
         translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight", "原野拾穗");
     }

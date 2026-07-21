@@ -15,9 +15,9 @@ public class ModItemsGroup {
             .displayName(Text.translatable("itemGroup.wilderness-delight.wilderness-delight"))
             .icon(() -> new ItemStack(ModItems.ICE_FLOWERS))
             .entries((displayContext, entries) -> {
+                entries.add(ModBlock.CHINESE_TOON_LEAVES_ITEM);
                 entries.add(ModBlock.SHEPHERD_PURSE_ITEM);
                 entries.add(ModBlock.CROP_DANDELION_ITEM);
-                entries.add(ModBlock.CHINESE_TOON_SPROUT_ITEM);
                 entries.add(ModBlock.HOUTTUYNIA_ITEM);
                 entries.add(ModBlock.BRACKEN_FERN_SHOOT_ITEM);
                 entries.add(ModBlock.WILD_GARLIC_ITEM);
@@ -31,11 +31,11 @@ public class ModItemsGroup {
                 entries.add(ModBlock.TREE_OF_HEAVEN_ITEM);
                 entries.add(ModBlock.BUTTERCUP_ITEM);
                 entries.add(ModBlock.CUDWEED_ITEM);
+                entries.add(ModBlock.CHINESE_TOON_SAPLING_ITEM);
                 entries.add(ModItems.ICE_FLOWERS);
                 entries.add(ModItems.HORSEWEED);
                 entries.add(ModItems.SHEPHERD_PURSE);
                 entries.add(ModItems.CROP_DANDELION);
-                entries.add(ModItems.CHINESE_TOON_SPROUT);
                 entries.add(ModItems.HOUTTUYNIA);
                 entries.add(ModItems.BRACKEN_FERN_SHOOT);
                 entries.add(ModItems.WILD_GARLIC);
@@ -49,6 +49,7 @@ public class ModItemsGroup {
                 entries.add(ModItems.TREE_OF_HEAVEN);
                 entries.add(ModItems.BUTTERCUP);
                 entries.add(ModItems.CUDWEED);
+                entries.add(ModItems.CHINESE_TOON_SPROUT);
             })
             .build();
 
