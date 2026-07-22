@@ -43,11 +43,12 @@ public class Model extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlock.MINT, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.POISON_HEMLOCK, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.LYCORIS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlock.TREE_OF_HEAVEN, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.BUTTERCUP, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.CUDWEED, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlock.CHINESE_TOON_LEAVES);
         blockStateModelGenerator.registerTintableCross(ModBlock.CHINESE_TOON_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlock.TREE_OF_HEAVEN_LEAVES);
+        blockStateModelGenerator.registerTintableCross(ModBlock.TREE_OF_HEAVEN_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override
@@ -69,5 +70,10 @@ public class Model extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BUTTERCUP, Models.GENERATED);
         itemModelGenerator.register(ModItems.CUDWEED, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHINESE_TOON_SPROUT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_BRACKEN_FERN_SHOOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_REED_SHOOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_PURSLANE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_SHEPHERD_PURSE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_WATER_DROPWORT, Models.GENERATED);
     }
 }

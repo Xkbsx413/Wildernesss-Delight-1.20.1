@@ -48,7 +48,6 @@ public class English extends FabricLanguageProvider {
            translationBuilder.add(ModBlock.LYCORIS,"wild lycoris");
            translationBuilder.add("item.wildernesss-delight.lycoris_block","lycoris");
            translationBuilder.add("item.wildernesss-delight.lycoris","lycoris leaves");
-           translationBuilder.add(ModBlock.TREE_OF_HEAVEN,"wild tree of heaven");
            translationBuilder.add("item.wildernesss-delight.tree_of_heaven_block","tree of heaven");
            translationBuilder.add("item.wildernesss-delight.tree_of_heaven","tree of heaven leaves");
            translationBuilder.add(ModBlock.BUTTERCUP,"wild buttercup");
@@ -63,10 +62,19 @@ public class English extends FabricLanguageProvider {
            translationBuilder.add("item.wildernesss-delight.potted_ice_flowers","potted ice flowers");
             translationBuilder.add(ModBlock.CHINESE_TOON_LEAVES,"chinese toon leaves");
             translationBuilder.add("item.wildernesss-delight.chinese_toon_leaves_block","chinese toon leaves");
-           translationBuilder.add(ModBlock.CHINESE_TOON_SAPLING,"chinese toon sapling");
-           translationBuilder.add("item.wildernesss-delight.chinese_toon_sapling_block","chinese toon sapling");
-           translationBuilder.add("item.wildernesss-delight.chinese_toon_sprout","toon leaves");
+            translationBuilder.add(ModBlock.CHINESE_TOON_SAPLING,"chinese toon sapling");
+            translationBuilder.add("item.wildernesss-delight.chinese_toon_sapling_block","chinese toon sapling");
+            translationBuilder.add(ModBlock.TREE_OF_HEAVEN_LEAVES,"tree of heaven leaves");
+            translationBuilder.add("item.wildernesss-delight.tree_of_heaven_leaves_block","tree of heaven leaves");
+            translationBuilder.add(ModBlock.TREE_OF_HEAVEN_SAPLING,"tree of heaven sapling");
+            translationBuilder.add("item.wildernesss-delight.tree_of_heaven_sapling_block","tree of heaven sapling");
+            translationBuilder.add("item.wildernesss-delight.chinese_toon_sprout","toon leaves");
+            translationBuilder.add("item.wildernesss-delight.cooked_bracken_fern_shoot","cooked bracken fern");
+            translationBuilder.add("item.wildernesss-delight.cooked_reed_shoot","cooked reed shoot");
+            translationBuilder.add("item.wildernesss-delight.cooked_purslane","cooked purslane");
+            translationBuilder.add("item.wildernesss-delight.cooked_shepherd_purse","cooked shepherd purse");
+            translationBuilder.add("item.wildernesss-delight.cooked_water_dropwort","cooked water dropwort");
 
-           translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight","Wilderness Delight");
+            translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight","Wilderness Delight");
     }
 }

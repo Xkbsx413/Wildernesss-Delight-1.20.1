@@ -48,7 +48,6 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add(ModBlock.LYCORIS,"野生石蒜");
         translationBuilder.add("item.wildernesss-delight.lycoris_block","石蒜");
         translationBuilder.add("item.wildernesss-delight.lycoris","石蒜");
-        translationBuilder.add(ModBlock.TREE_OF_HEAVEN,"野生臭椿");
         translationBuilder.add("item.wildernesss-delight.tree_of_heaven_block","臭椿");
         translationBuilder.add("item.wildernesss-delight.tree_of_heaven","臭椿");
         translationBuilder.add(ModBlock.BUTTERCUP,"野生石龙芮");
@@ -65,7 +64,16 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("item.wildernesss-delight.chinese_toon_leaves_block","香椿树叶");
         translationBuilder.add(ModBlock.CHINESE_TOON_SAPLING,"香椿树苗");
         translationBuilder.add("item.wildernesss-delight.chinese_toon_sapling_block","香椿树苗");
+        translationBuilder.add(ModBlock.TREE_OF_HEAVEN_LEAVES,"臭椿树叶");
+        translationBuilder.add("item.wildernesss-delight.tree_of_heaven_leaves_block","臭椿树叶");
+        translationBuilder.add(ModBlock.TREE_OF_HEAVEN_SAPLING,"臭椿树苗");
+        translationBuilder.add("item.wildernesss-delight.tree_of_heaven_sapling_block","臭椿树苗");
         translationBuilder.add("item.wildernesss-delight.chinese_toon_sprout","香椿");
+        translationBuilder.add("item.wildernesss-delight.cooked_bracken_fern_shoot","烤蕨菜");
+        translationBuilder.add("item.wildernesss-delight.cooked_reed_shoot","烤芦苇笋");
+        translationBuilder.add("item.wildernesss-delight.cooked_purslane","烤马齿苋");
+        translationBuilder.add("item.wildernesss-delight.cooked_shepherd_purse","烤荠菜");
+        translationBuilder.add("item.wildernesss-delight.cooked_water_dropwort","烤水芹");
 
         translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight", "原野拾穗");
     }

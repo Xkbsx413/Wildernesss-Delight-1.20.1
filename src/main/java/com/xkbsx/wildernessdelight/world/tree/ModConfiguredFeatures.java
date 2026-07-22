@@ -12,6 +12,7 @@ import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliage.BushFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
@@ -30,11 +31,12 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> POISON_HEMLOCK_COVERED = of("poison_hemlock_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MINT_COVERED = of("mint_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> LYCORIS_COVERED = of("lycoris_covered");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> TREE_OF_HEAVEN_COVERED = of("tree_of_heaven_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> BUTTERCUP_COVERED = of("buttercup_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CUDWEED_COVERED = of("cudweed_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHINESE_TOON_SMALL_TREE = of("chinese_toon_small_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHINESE_TOON_NORMAL_TREE = of("chinese_toon_normal_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> TREE_OF_HEAVEN_SMALL_TREE = of("tree_of_heaven_small_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> TREE_OF_HEAVEN_NORMAL_TREE = of("tree_of_heaven_normal_tree");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
         register(featureRegisterable, ICE_FLOWERS_COVERED, ModBlock.ICE_FLOWERS, 7);
@@ -51,17 +53,16 @@ public class ModConfiguredFeatures {
         register(featureRegisterable, POISON_HEMLOCK_COVERED, ModBlock.POISON_HEMLOCK, 5);
         register(featureRegisterable, MINT_COVERED, ModBlock.MINT, 7);
         register(featureRegisterable, LYCORIS_COVERED, ModBlock.LYCORIS, 5);
-        register(featureRegisterable, TREE_OF_HEAVEN_COVERED, ModBlock.TREE_OF_HEAVEN, 6);
         register(featureRegisterable, BUTTERCUP_COVERED, ModBlock.BUTTERCUP, 9);
         register(featureRegisterable, CUDWEED_COVERED, ModBlock.CUDWEED, 7);
 
         ConfiguredFeatures.register(featureRegisterable, CHINESE_TOON_SMALL_TREE, Feature.TREE,
                 new TreeFeatureConfig.Builder(
                         BlockStateProvider.of(Blocks.OAK_LOG),
-                        new StraightTrunkPlacer(2, 0, 0),
+                        new StraightTrunkPlacer(1, 0, 0),
                         BlockStateProvider.of(ModBlock.CHINESE_TOON_LEAVES),
-                        new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2),
-                        new TwoLayersFeatureSize(1, 0, 1)
+                        new BushFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
                 ).dirtProvider(BlockStateProvider.of(Blocks.DIRT)).build());
 
         ConfiguredFeatures.register(featureRegisterable, CHINESE_TOON_NORMAL_TREE, Feature.TREE,
@@ -69,6 +70,24 @@ public class ModConfiguredFeatures {
                         BlockStateProvider.of(Blocks.OAK_LOG),
                         new StraightTrunkPlacer(4, 2, 0),
                         BlockStateProvider.of(ModBlock.CHINESE_TOON_LEAVES),
+                        new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                        new TwoLayersFeatureSize(1, 0, 1)
+                ).dirtProvider(BlockStateProvider.of(Blocks.DIRT)).build());
+
+        ConfiguredFeatures.register(featureRegisterable, TREE_OF_HEAVEN_SMALL_TREE, Feature.TREE,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(Blocks.OAK_LOG),
+                        new StraightTrunkPlacer(1, 0, 0),
+                        BlockStateProvider.of(ModBlock.TREE_OF_HEAVEN_LEAVES),
+                        new BushFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
+                ).dirtProvider(BlockStateProvider.of(Blocks.DIRT)).build());
+
+        ConfiguredFeatures.register(featureRegisterable, TREE_OF_HEAVEN_NORMAL_TREE, Feature.TREE,
+                new TreeFeatureConfig.Builder(
+                        BlockStateProvider.of(Blocks.OAK_LOG),
+                        new StraightTrunkPlacer(4, 2, 0),
+                        BlockStateProvider.of(ModBlock.TREE_OF_HEAVEN_LEAVES),
                         new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                         new TwoLayersFeatureSize(1, 0, 1)
                 ).dirtProvider(BlockStateProvider.of(Blocks.DIRT)).build());

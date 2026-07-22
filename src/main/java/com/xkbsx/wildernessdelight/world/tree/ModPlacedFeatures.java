@@ -14,6 +14,7 @@ import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightmapPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.SurfaceWaterDepthFilterPlacementModifier;
 
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> ICE_FLOWERS_COVERED_LAND = of("ice_flowers_covered_land");
@@ -30,11 +31,12 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> POISON_HEMLOCK_COVERED_LAND = of("poison_hemlock_covered_land");
     public static final RegistryKey<PlacedFeature> MINT_COVERED_LAND = of("mint_covered_land");
     public static final RegistryKey<PlacedFeature> LYCORIS_COVERED_LAND = of("lycoris_covered_land");
-    public static final RegistryKey<PlacedFeature> TREE_OF_HEAVEN_COVERED_LAND = of("tree_of_heaven_covered_land");
     public static final RegistryKey<PlacedFeature> BUTTERCUP_COVERED_LAND = of("buttercup_covered_land");
     public static final RegistryKey<PlacedFeature> CUDWEED_COVERED_LAND = of("cudweed_covered_land");
     public static final RegistryKey<PlacedFeature> CHINESE_TOON_SMALL_TREE_LAND = of("chinese_toon_small_tree_land");
     public static final RegistryKey<PlacedFeature> CHINESE_TOON_NORMAL_TREE_LAND = of("chinese_toon_normal_tree_land");
+    public static final RegistryKey<PlacedFeature> TREE_OF_HEAVEN_SMALL_TREE_LAND = of("tree_of_heaven_small_tree_land");
+    public static final RegistryKey<PlacedFeature> TREE_OF_HEAVEN_NORMAL_TREE_LAND = of("tree_of_heaven_normal_tree_land");
 
 
     public static void bootstrap(Registerable<PlacedFeature> featureRegisterable) {
@@ -53,19 +55,34 @@ public class ModPlacedFeatures {
         register(featureRegisterable, lookup, POISON_HEMLOCK_COVERED_LAND, ModConfiguredFeatures.POISON_HEMLOCK_COVERED, 7);
         register(featureRegisterable, lookup, MINT_COVERED_LAND, ModConfiguredFeatures.MINT_COVERED, 7);
         register(featureRegisterable, lookup, LYCORIS_COVERED_LAND, ModConfiguredFeatures.LYCORIS_COVERED, 7);
-        register(featureRegisterable, lookup, TREE_OF_HEAVEN_COVERED_LAND, ModConfiguredFeatures.TREE_OF_HEAVEN_COVERED, 7);
         register(featureRegisterable, lookup, BUTTERCUP_COVERED_LAND, ModConfiguredFeatures.BUTTERCUP_COVERED, 7);
         register(featureRegisterable, lookup, CUDWEED_COVERED_LAND, ModConfiguredFeatures.CUDWEED_COVERED, 7);
         PlacedFeatures.register(featureRegisterable, CHINESE_TOON_SMALL_TREE_LAND,
                 lookup.getOrThrow(ModConfiguredFeatures.CHINESE_TOON_SMALL_TREE),
                 RarityFilterPlacementModifier.of(6),
                 SquarePlacementModifier.of(),
+                SurfaceWaterDepthFilterPlacementModifier.of(0),
                 HeightmapPlacementModifier.of(Heightmap.Type.WORLD_SURFACE_WG),
                 BiomePlacementModifier.of());
         PlacedFeatures.register(featureRegisterable, CHINESE_TOON_NORMAL_TREE_LAND,
                 lookup.getOrThrow(ModConfiguredFeatures.CHINESE_TOON_NORMAL_TREE),
                 RarityFilterPlacementModifier.of(8),
                 SquarePlacementModifier.of(),
+                SurfaceWaterDepthFilterPlacementModifier.of(0),
+                HeightmapPlacementModifier.of(Heightmap.Type.WORLD_SURFACE_WG),
+                BiomePlacementModifier.of());
+        PlacedFeatures.register(featureRegisterable, TREE_OF_HEAVEN_SMALL_TREE_LAND,
+                lookup.getOrThrow(ModConfiguredFeatures.TREE_OF_HEAVEN_SMALL_TREE),
+                RarityFilterPlacementModifier.of(6),
+                SquarePlacementModifier.of(),
+                SurfaceWaterDepthFilterPlacementModifier.of(0),
+                HeightmapPlacementModifier.of(Heightmap.Type.WORLD_SURFACE_WG),
+                BiomePlacementModifier.of());
+        PlacedFeatures.register(featureRegisterable, TREE_OF_HEAVEN_NORMAL_TREE_LAND,
+                lookup.getOrThrow(ModConfiguredFeatures.TREE_OF_HEAVEN_NORMAL_TREE),
+                RarityFilterPlacementModifier.of(8),
+                SquarePlacementModifier.of(),
+                SurfaceWaterDepthFilterPlacementModifier.of(0),
                 HeightmapPlacementModifier.of(Heightmap.Type.WORLD_SURFACE_WG),
                 BiomePlacementModifier.of());
     }
@@ -79,6 +96,7 @@ public class ModPlacedFeatures {
                 lookup.getOrThrow(configuredFeature),
                 RarityFilterPlacementModifier.of(rarity),
                 SquarePlacementModifier.of(),
+                SurfaceWaterDepthFilterPlacementModifier.of(0),
                 PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
                 BiomePlacementModifier.of());
     }

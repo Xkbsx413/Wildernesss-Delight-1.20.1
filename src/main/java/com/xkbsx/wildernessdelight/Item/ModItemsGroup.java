@@ -16,6 +16,7 @@ public class ModItemsGroup {
             .icon(() -> new ItemStack(ModItems.ICE_FLOWERS))
             .entries((displayContext, entries) -> {
                 entries.add(ModBlock.CHINESE_TOON_LEAVES_ITEM);
+                entries.add(ModBlock.TREE_OF_HEAVEN_LEAVES_ITEM);
                 entries.add(ModBlock.SHEPHERD_PURSE_ITEM);
                 entries.add(ModBlock.CROP_DANDELION_ITEM);
                 entries.add(ModBlock.HOUTTUYNIA_ITEM);
@@ -28,10 +29,10 @@ public class ModItemsGroup {
                 entries.add(ModBlock.MINT_ITEM);
                 entries.add(ModBlock.POISON_HEMLOCK_ITEM);
                 entries.add(ModBlock.LYCORIS_ITEM);
-                entries.add(ModBlock.TREE_OF_HEAVEN_ITEM);
                 entries.add(ModBlock.BUTTERCUP_ITEM);
                 entries.add(ModBlock.CUDWEED_ITEM);
                 entries.add(ModBlock.CHINESE_TOON_SAPLING_ITEM);
+                entries.add(ModBlock.TREE_OF_HEAVEN_SAPLING_ITEM);
                 entries.add(ModItems.ICE_FLOWERS);
                 entries.add(ModItems.HORSEWEED);
                 entries.add(ModItems.SHEPHERD_PURSE);
@@ -50,6 +51,11 @@ public class ModItemsGroup {
                 entries.add(ModItems.BUTTERCUP);
                 entries.add(ModItems.CUDWEED);
                 entries.add(ModItems.CHINESE_TOON_SPROUT);
+                entries.add(ModItems.COOKED_BRACKEN_FERN_SHOOT);
+                entries.add(ModItems.COOKED_REED_SHOOT);
+                entries.add(ModItems.COOKED_PURSLANE);
+                entries.add(ModItems.COOKED_SHEPHERD_PURSE);
+                entries.add(ModItems.COOKED_WATER_DROPWORT);
             })
             .build();
 

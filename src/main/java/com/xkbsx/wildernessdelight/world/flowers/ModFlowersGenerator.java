@@ -51,19 +51,22 @@ public class ModFlowersGenerator {
                 BiomeKeys.BAMBOO_JUNGLE, BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.OLD_GROWTH_PINE_TAIGA),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LYCORIS_COVERED_LAND);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
-                BiomeKeys.WINDSWEPT_HILLS, BiomeKeys.WINDSWEPT_GRAVELLY_HILLS, BiomeKeys.SAVANNA_PLATEAU),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TREE_OF_HEAVEN_COVERED_LAND);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
                 BiomeKeys.SNOWY_SLOPES, BiomeKeys.CHERRY_GROVE, BiomeKeys.FLOWER_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BUTTERCUP_COVERED_LAND);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
                 BiomeKeys.WOODED_BADLANDS, BiomeKeys.MEADOW, BiomeKeys.SNOWY_TAIGA),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CUDWEED_COVERED_LAND);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
-                BiomeKeys.FOREST, BiomeKeys.WINDSWEPT_HILLS),
+                BiomeKeys.JUNGLE, BiomeKeys.BAMBOO_JUNGLE, BiomeKeys.SPARSE_JUNGLE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHINESE_TOON_SMALL_TREE_LAND);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
                 BiomeKeys.FLOWER_FOREST, BiomeKeys.WINDSWEPT_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHINESE_TOON_NORMAL_TREE_LAND);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
+                BiomeKeys.JUNGLE, BiomeKeys.BAMBOO_JUNGLE, BiomeKeys.SPARSE_JUNGLE),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TREE_OF_HEAVEN_SMALL_TREE_LAND);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
+                BiomeKeys.FLOWER_FOREST, BiomeKeys.WINDSWEPT_FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TREE_OF_HEAVEN_NORMAL_TREE_LAND);
     }
 }

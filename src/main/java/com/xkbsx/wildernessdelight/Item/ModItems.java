@@ -29,6 +29,11 @@ public class ModItems {
     public static final Item BUTTERCUP = registerItems("buttercup", new Item(new Item.Settings().food(ModFoodComponents.Buttercup)));
     public static final Item CUDWEED = registerItems("cudweed", new Item(new Item.Settings().food(ModFoodComponents.Cudweed)));
     public static final Item CHINESE_TOON_SPROUT = registerItems("chinese_toon_sprout", new Item(new Item.Settings().food(ModFoodComponents.Chinese_Toon_Sprout)));
+    public static final Item COOKED_BRACKEN_FERN_SHOOT = registerItems("cooked_bracken_fern_shoot", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Bracken_Fern_Shoot)));
+    public static final Item COOKED_REED_SHOOT = registerItems("cooked_reed_shoot", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Reed_Shoot)));
+    public static final Item COOKED_PURSLANE = registerItems("cooked_purslane", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Purslane)));
+    public static final Item COOKED_SHEPHERD_PURSE = registerItems("cooked_shepherd_purse", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Shepherd_Purse)));
+    public static final Item COOKED_WATER_DROPWORT = registerItems("cooked_water_dropwort", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Water_Dropwort)));
 
     public static Item registerItems(String id, Item item) {
         if (item instanceof BlockItem) {
