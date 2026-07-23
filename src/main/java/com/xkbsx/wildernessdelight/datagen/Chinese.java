@@ -75,6 +75,34 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("item.wildernesss-delight.cooked_shepherd_purse","烤荠菜");
         translationBuilder.add("item.wildernesss-delight.cooked_water_dropwort","烤水芹");
 
+        // ═══════════ 🥘 锅料理 ═══════════
+        translationBuilder.add("item.wildernesss-delight.chinese_toon_scrambled_eggs", "香椿炒蛋");
+        translationBuilder.add("item.wildernesss-delight.shepherd_purse_dumplings", "荠菜饺子");
+        translationBuilder.add("item.wildernesss-delight.houttuynia_salad", "凉拌折耳根");
+        translationBuilder.add("item.wildernesss-delight.purslane_mozzarella_salad", "马齿苋沙拉");
+        translationBuilder.add("item.wildernesss-delight.bracken_fern_with_bacon", "蕨菜炒培根");
+        translationBuilder.add("item.wildernesss-delight.mugwort_with_corn", "芦蒿玉米粒");
+        translationBuilder.add("item.wildernesss-delight.water_dropwort_onion_salad", "水芹洋葱沙拉");
+        translationBuilder.add("item.wildernesss-delight.dandelion_tomato_egg_soup", "蒲公英番茄汤");
+        translationBuilder.add("item.wildernesss-delight.reed_shoot_chicken_lettuce", "芦苇笋鸡丁");
+        translationBuilder.add("item.wildernesss-delight.wild_garlic_corn_pancake", "野葱玉米烙");
+        translationBuilder.add("item.wildernesss-delight.horseweed_mozzarella_honey", "飞蓬芝士焗");
+        translationBuilder.add("item.wildernesss-delight.mixed_wild_stir_fry", "山野炒时蔬");
+        translationBuilder.add("item.wildernesss-delight.double_wild_veg_salad", "凉拌双蔬");
+        translationBuilder.add("item.wildernesss-delight.wild_veg_pancake", "野菜薄饼");
+        translationBuilder.add("item.wildernesss-delight.three_fresh_salad", "三鲜沙拉");
+        translationBuilder.add("item.wildernesss-delight.wild_vegetable_soup", "野菜浓汤");
+        // ═══════════ 🔥 烤炉料理 ═══════════
+        translationBuilder.add("item.wildernesss-delight.mint_lamb_ham", "薄荷羊肉");
+        // ═══════════ ⚒️ 合成台料理 ═══════════
+        translationBuilder.add("item.wildernesss-delight.ice_flower_fruit_salad", "寒霜花水果沙拉");
+        // ═══════════ 🧃 饮品 ═══════════
+        translationBuilder.add("item.wildernesss-delight.mint_tea", "薄荷茶");
+        translationBuilder.add("item.wildernesss-delight.dandelion_root_tea", "蒲公英根茶");
+        translationBuilder.add("item.wildernesss-delight.ice_flower_mint_soup", "寒霜花汤");
+        // ═══════════ 🍡 甜点 ═══════════
+        translationBuilder.add("item.wildernesss-delight.cudweed_rice_dumpling", "鼠曲草青团");
+
         translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight", "原野拾穗");
     }
 }

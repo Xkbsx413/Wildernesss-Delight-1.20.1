@@ -1,6 +1,7 @@
 package com.xkbsx.wildernessdelight;
 
 import com.xkbsx.wildernessdelight.datagen.*;
+import com.xkbsx.wildernessdelight.datagen.ModItemTagProvider;
 import com.xkbsx.wildernessdelight.world.tree.ModConfiguredFeatures;
 import com.xkbsx.wildernessdelight.world.tree.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -19,6 +20,7 @@ public class WildernesssDelightDataGenerator implements DataGeneratorEntrypoint 
 		 pack.addProvider(ModLootTableProvider::new);
 		 pack.addProvider(ModWorldGenerator::new);
 		 pack.addProvider(ModRecipesProvider::new);
+		 pack.addProvider(ModItemTagProvider::new);
 	}
 
 	@Override

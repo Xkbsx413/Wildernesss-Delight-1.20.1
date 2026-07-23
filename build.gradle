@@ -14,8 +14,9 @@ repositories {
 	// for more information about repositories.
     maven { url = 'https://maven.minecraftforge.net/' }
 
-	//maven { url = "https://cursemaven.com" }
+    //maven { url = "https://cursemaven.com" }
 	maven { url = "https://maven.terraformersmc.com/" }
+	mavenCentral()
 
 }
 
@@ -39,6 +40,8 @@ dependencies {
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
 
 	// Let's Do 系列前置
+	implementation "blue.endless:jankson:1.2.1"
+
 	modImplementation files(
 		'libs/letsdo-API-fabric-1.2.15-fabric.jar',
 		'libs/letsdo-farm_and_charm-fabric-1.0.4.jar',

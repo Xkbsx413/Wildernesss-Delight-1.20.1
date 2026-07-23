@@ -75,5 +75,33 @@ public class Model extends FabricModelProvider {
         itemModelGenerator.register(ModItems.COOKED_PURSLANE, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_SHEPHERD_PURSE, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_WATER_DROPWORT, Models.GENERATED);
+
+        // ═══════════ 🥘 锅料理 ═══════════
+        itemModelGenerator.register(ModItems.CHINESE_TOON_SCRAMBLED_EGGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SHEPHERD_PURSE_DUMPLINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HOUTTUYNIA_SALAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PURSLANE_MOZZARELLA_SALAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BRACKEN_FERN_WITH_BACON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MUGWORT_WITH_CORN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WATER_DROPWORT_ONION_SALAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DANDELION_TOMATO_EGG_SOUP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REED_SHOOT_CHICKEN_LETTUCE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WILD_GARLIC_CORN_PANCAKE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HORSEWEED_MOZZARELLA_HONEY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MIXED_WILD_STIR_FRY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DOUBLE_WILD_VEG_SALAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WILD_VEG_PANCAKE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.THREE_FRESH_SALAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WILD_VEGETABLE_SOUP, Models.GENERATED);
+        // ═══════════ 🔥 烤炉料理 ═══════════
+        itemModelGenerator.register(ModItems.MINT_LAMB_HAM, Models.GENERATED);
+        // ═══════════ ⚒️ 合成台料理 ═══════════
+        itemModelGenerator.register(ModItems.ICE_FLOWER_FRUIT_SALAD, Models.GENERATED);
+        // ═══════════ 🧃 饮品 ═══════════
+        itemModelGenerator.register(ModItems.MINT_TEA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DANDELION_ROOT_TEA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ICE_FLOWER_MINT_SOUP, Models.GENERATED);
+        // ═══════════ 🍡 甜点 ═══════════
+        itemModelGenerator.register(ModItems.CUDWEED_RICE_DUMPLING, Models.GENERATED);
     }
 }

@@ -56,6 +56,34 @@ public class ModItemsGroup {
                 entries.add(ModItems.COOKED_PURSLANE);
                 entries.add(ModItems.COOKED_SHEPHERD_PURSE);
                 entries.add(ModItems.COOKED_WATER_DROPWORT);
+
+                // ═══════════ 🥘 锅料理 ═══════════
+                entries.add(ModItems.CHINESE_TOON_SCRAMBLED_EGGS);
+                entries.add(ModItems.SHEPHERD_PURSE_DUMPLINGS);
+                entries.add(ModItems.HOUTTUYNIA_SALAD);
+                entries.add(ModItems.PURSLANE_MOZZARELLA_SALAD);
+                entries.add(ModItems.BRACKEN_FERN_WITH_BACON);
+                entries.add(ModItems.MUGWORT_WITH_CORN);
+                entries.add(ModItems.WATER_DROPWORT_ONION_SALAD);
+                entries.add(ModItems.DANDELION_TOMATO_EGG_SOUP);
+                entries.add(ModItems.REED_SHOOT_CHICKEN_LETTUCE);
+                entries.add(ModItems.WILD_GARLIC_CORN_PANCAKE);
+                entries.add(ModItems.HORSEWEED_MOZZARELLA_HONEY);
+                entries.add(ModItems.MIXED_WILD_STIR_FRY);
+                entries.add(ModItems.DOUBLE_WILD_VEG_SALAD);
+                entries.add(ModItems.WILD_VEG_PANCAKE);
+                entries.add(ModItems.THREE_FRESH_SALAD);
+                entries.add(ModItems.WILD_VEGETABLE_SOUP);
+                // ═══════════ 🔥 烤炉料理 ═══════════
+                entries.add(ModItems.MINT_LAMB_HAM);
+                // ═══════════ ⚒️ 合成台料理 ═══════════
+                entries.add(ModItems.ICE_FLOWER_FRUIT_SALAD);
+                // ═══════════ 🧃 饮品 ═══════════
+                entries.add(ModItems.MINT_TEA);
+                entries.add(ModItems.DANDELION_ROOT_TEA);
+                entries.add(ModItems.ICE_FLOWER_MINT_SOUP);
+                // ═══════════ 🍡 甜点 ═══════════
+                entries.add(ModItems.CUDWEED_RICE_DUMPLING);
             })
             .build();
 

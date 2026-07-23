@@ -75,6 +75,34 @@ public class English extends FabricLanguageProvider {
             translationBuilder.add("item.wildernesss-delight.cooked_shepherd_purse","cooked shepherd purse");
             translationBuilder.add("item.wildernesss-delight.cooked_water_dropwort","cooked water dropwort");
 
+            // ═══════════ 🥘 锅料理 ═══════════
+            translationBuilder.add("item.wildernesss-delight.chinese_toon_scrambled_eggs","Chinese Toon Scrambled Eggs");
+            translationBuilder.add("item.wildernesss-delight.shepherd_purse_dumplings","Shepherd's Purse Dumplings");
+            translationBuilder.add("item.wildernesss-delight.houttuynia_salad","Houttuynia Salad");
+            translationBuilder.add("item.wildernesss-delight.purslane_mozzarella_salad","Purslane Mozzarella Salad");
+            translationBuilder.add("item.wildernesss-delight.bracken_fern_with_bacon","Bracken Fern with Bacon");
+            translationBuilder.add("item.wildernesss-delight.mugwort_with_corn","Mugwort with Corn");
+            translationBuilder.add("item.wildernesss-delight.water_dropwort_onion_salad","Water Dropwort Onion Salad");
+            translationBuilder.add("item.wildernesss-delight.dandelion_tomato_egg_soup","Dandelion Tomato Egg Soup");
+            translationBuilder.add("item.wildernesss-delight.reed_shoot_chicken_lettuce","Reed Shoot with Chicken & Lettuce");
+            translationBuilder.add("item.wildernesss-delight.wild_garlic_corn_pancake","Wild Garlic Corn Pancake");
+            translationBuilder.add("item.wildernesss-delight.horseweed_mozzarella_honey","Horseweed Mozzarella Bake");
+            translationBuilder.add("item.wildernesss-delight.mixed_wild_stir_fry","Mixed Wild Vegetable Stir-fry");
+            translationBuilder.add("item.wildernesss-delight.double_wild_veg_salad","Double Wild Vegetable Salad");
+            translationBuilder.add("item.wildernesss-delight.wild_veg_pancake","Wild Vegetable Pancake");
+            translationBuilder.add("item.wildernesss-delight.three_fresh_salad","Three Fresh Salad");
+            translationBuilder.add("item.wildernesss-delight.wild_vegetable_soup","Wild Vegetable Soup");
+            // ═══════════ 🔥 烤炉料理 ═══════════
+            translationBuilder.add("item.wildernesss-delight.mint_lamb_ham","Mint Lamb Ham");
+            // ═══════════ ⚒️ 合成台料理 ═══════════
+            translationBuilder.add("item.wildernesss-delight.ice_flower_fruit_salad","Ice Flower Fruit Salad");
+            // ═══════════ 🧃 饮品 ═══════════
+            translationBuilder.add("item.wildernesss-delight.mint_tea","Mint Tea");
+            translationBuilder.add("item.wildernesss-delight.dandelion_root_tea","Dandelion Root Tea");
+            translationBuilder.add("item.wildernesss-delight.ice_flower_mint_soup","Ice Flower Mint Soup");
+            // ═══════════ 🍡 甜点 ═══════════
+            translationBuilder.add("item.wildernesss-delight.cudweed_rice_dumpling","Cudweed Rice Dumpling");
+
             translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight","Wilderness Delight");
     }
 }
