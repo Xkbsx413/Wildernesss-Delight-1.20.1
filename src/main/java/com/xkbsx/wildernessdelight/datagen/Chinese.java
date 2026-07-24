@@ -104,5 +104,32 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("item.wildernesss-delight.cudweed_rice_dumpling", "鼠曲草青团");
 
         translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight", "原野拾穗");
+
+        // ═══════════ 进度 (Advancements) ═══════════
+        // §a绿色=入门  §e黄色=中等  §c红色=危险  §5紫色=挑战  §6金色=大师 §7浅灰色=文本描述
+        translationBuilder.add("advancement.wildernesss-delight.root.title", "§a原野拾穗");
+        translationBuilder.add("advancement.wildernesss-delight.root.desc", "§a采集一种野菜，开始荒野烹饪之旅");
+        translationBuilder.add("advancement.wildernesss-delight.forager.title", "§e荒野百科");
+        translationBuilder.add("advancement.wildernesss-delight.forager.desc", "§e集齐全部可食用野菜");
+        translationBuilder.add("advancement.wildernesss-delight.toxicologist.title", "§a路边的草不要乱采");
+        translationBuilder.add("advancement.wildernesss-delight.toxicologist.desc", "§a收获一株有毒野菜，好奇心差点酿成灾祸");
+        translationBuilder.add("advancement.wildernesss-delight.cook.title", "§a野蔬炙烤");
+        translationBuilder.add("advancement.wildernesss-delight.cook.desc", "§a架起炉火烹制野菜，期待一口山野风味");
+        translationBuilder.add("advancement.wildernesss-delight.chef.title", "§6荒野料理");
+        translationBuilder.add("advancement.wildernesss-delight.chef.desc", "§7制作一道野菜料理");
+        translationBuilder.add("advancement.wildernesss-delight.drink.title", "§e清凉一刻");
+        translationBuilder.add("advancement.wildernesss-delight.drink.desc", "§7制作一种清凉的山野饮品");
+        translationBuilder.add("advancement.wildernesss-delight.feast.title", "§5百草烹宴");
+        translationBuilder.add("advancement.wildernesss-delight.feast.desc", "§5集齐全部野菜料理，将山野草木尽数化为盘中餐");
+        translationBuilder.add("advancement.wildernesss-delight.refreshing.title", "§a沁人心脾");
+        translationBuilder.add("advancement.wildernesss-delight.refreshing.desc", "§a吃下一片薄荷叶，感受清凉舒爽");
+
+        translationBuilder.add(ModBlock.WILDERNESS_BANNER, "§e全物品收集者旗帜 : §a原野拾穗");
+        translationBuilder.add("item.wildernesss-delight.wilderness_banner", "§e全物品收集者旗帜 : §a原野拾穗");
+        translationBuilder.add(ModBlock.WILDERNESS_BANNER_STANDING, "§e全物品收集者旗帜 : §a原野拾穗");
+        translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line1", "烹饪所有菜品获得的奖励");
+        translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line2", "当放置时 :");
+        translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line3", "在半径8格范围内给予速度效果");
+        translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line4", "感谢您游玩原野拾穗！");
     }
 }

@@ -2,6 +2,7 @@ package com.xkbsx.wildernessdelight.datagen;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.xkbsx.wildernessdelight.WildernesssDelight;
 import com.xkbsx.wildernessdelight.block.ModBlock;
 import com.xkbsx.wildernessdelight.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -239,13 +240,21 @@ public class ModRecipesProvider extends FabricRecipeProvider {
         // ⚒️ 合成台 — 无序合成（shapeless）
         // ═══════════════════════════════════════════════════════════════════════════════
 
-        // 22. 寒霜花沙拉（饥饿6/饱和0.55）
+        // 23. 冰花水果沙拉（饥饿6/饱和0.55）
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.ICE_FLOWER_FRUIT_SALAD, 1)
                 .input(ModItems.ICE_FLOWERS)
                 .input(fromId("farm_and_charm:lettuce"))
                 .input(ModItemTagProvider.FRUITS)
                 .criterion("has_ice_flowers", conditionsFromItem(ModItems.ICE_FLOWERS))
                 .offerTo(consumer);
+
+        // ═══════════════ 锻造台 (Smithing Transform) ═══════════════
+        // 原野旗帜 × 1 + 下界合金升级模板 + 下界合金锭 → 原野旗帜 × 2
+        offerSmithingTransform(consumer, "wilderness_banner_smithing",
+                Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
+                ModBlock.WILDERNESS_BANNER_ITEM,
+                Items.NETHERITE_INGOT,
+                ModBlock.WILDERNESS_BANNER_ITEM, 2);
     }
 
     // ═══════════════════════════════════════════════════════════════
@@ -383,6 +392,60 @@ public class ModRecipesProvider extends FabricRecipeProvider {
             @Override
             public RecipeSerializer<?> getSerializer() {
                 return Registries.RECIPE_SERIALIZER.get(new Identifier("farm_and_charm", "stove"));
+            }
+
+            @Override
+            public @Nullable JsonObject toAdvancementJson() {
+                return null;
+            }
+
+            @Override
+            public Identifier getAdvancementId() {
+                return null;
+            }
+        });
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // 锻造台合成 (Smithing Transform)
+    // 输出到 data/wildernesss-delight/recipes/   type: minecraft:smithing_transform
+    // ═══════════════════════════════════════════════════════════════
+    private static void offerSmithingTransform(Consumer<RecipeJsonProvider> consumer, String name,
+                                                ItemConvertible template, ItemConvertible base,
+                                                ItemConvertible addition, ItemConvertible result, int count) {
+        Identifier recipeId = new Identifier(WildernesssDelight.MOD_ID, name);
+
+        consumer.accept(new RecipeJsonProvider() {
+            @Override
+            public void serialize(JsonObject json) {
+                json.addProperty("type", "minecraft:smithing_transform");// 锻造台转换配方类型
+
+                JsonObject templateObj = new JsonObject();
+                templateObj.addProperty("item", Registries.ITEM.getId(template.asItem()).toString());// 锻造模板：下界合金升级模板
+                json.add("template", templateObj);
+
+                JsonObject baseObj = new JsonObject();
+                baseObj.addProperty("item", Registries.ITEM.getId(base.asItem()).toString());// 基底：原野旗帜
+                json.add("base", baseObj);
+
+                JsonObject additionObj = new JsonObject();
+                additionObj.addProperty("item", Registries.ITEM.getId(addition.asItem()).toString());// 附加材料：下界合金锭
+                json.add("addition", additionObj);
+
+                JsonObject resultObj = new JsonObject();
+                resultObj.addProperty("item", Registries.ITEM.getId(result.asItem()).toString());// 输出物：原野旗帜
+                resultObj.addProperty("count", count);// 输出数量：2 个
+                json.add("result", resultObj);
+            }
+
+            @Override
+            public Identifier getRecipeId() {
+                return recipeId;
+            }
+
+            @Override
+            public RecipeSerializer<?> getSerializer() {
+                return RecipeSerializer.SMITHING_TRANSFORM;
             }
 
             @Override

@@ -3,6 +3,7 @@ package com.xkbsx.wildernessdelight;
 import com.xkbsx.wildernessdelight.item.ModItems;
 import com.xkbsx.wildernessdelight.item.ModItemsGroup;
 import com.xkbsx.wildernessdelight.block.ModBlock;
+import com.xkbsx.wildernessdelight.block.ModBlockEntities;
 import com.xkbsx.wildernessdelight.world.tree.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -27,6 +28,7 @@ public class WildernesssDelight implements ModInitializer {
 		ModItemsGroup.RegisterGroups();
 		ModBlock.registerBlocks();
 		ModItems.registerItems();
+		ModBlockEntities.register();
 		ModWorldGeneration.register();
 		LOGGER.info("Hello Fabric world!");
 	}

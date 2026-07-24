@@ -104,5 +104,32 @@ public class English extends FabricLanguageProvider {
             translationBuilder.add("item.wildernesss-delight.cudweed_rice_dumpling","Cudweed Rice Dumpling");
 
             translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight","Wilderness Delight");
+
+        // ═══════════ Advancements ═══════════
+        // §a=Easy  §e=Medium  §c=Danger  §d=Challenge  §6=Master
+        translationBuilder.add("advancement.wildernesss-delight.root.title", "§aWilderness Delight");
+        translationBuilder.add("advancement.wildernesss-delight.root.desc", "§7Forage a wild vegetable and start your wilderness cuisine journey");
+        translationBuilder.add("advancement.wildernesss-delight.forager.title", "§eMaster Forager");
+        translationBuilder.add("advancement.wildernesss-delight.forager.desc", "§7Collect all edible wild vegetables");
+        translationBuilder.add("advancement.wildernesss-delight.toxicologist.title", "§aDon't Pick Random Weeds");
+        translationBuilder.add("advancement.wildernesss-delight.toxicologist.desc", "§7You harvested a poisonous wild plant. Curiosity nearly brought disaster.");
+        translationBuilder.add("advancement.wildernesss-delight.cook.title", "§aWild Greens Roast");
+        translationBuilder.add("advancement.wildernesss-delight.cook.desc", "§7Cook wild plants over fire, hoping for a taste of the wilderness.");
+        translationBuilder.add("advancement.wildernesss-delight.chef.title", "§6Wild Chef");
+        translationBuilder.add("advancement.wildernesss-delight.chef.desc", "§7Prepare a pot-cooked dish");
+        translationBuilder.add("advancement.wildernesss-delight.drink.title", "§eRefreshment");
+        translationBuilder.add("advancement.wildernesss-delight.drink.desc", "§7Prepare a drink");
+        translationBuilder.add("advancement.wildernesss-delight.feast.title", "§5Feast of a Hundred Herbs");
+        translationBuilder.add("advancement.wildernesss-delight.feast.desc", "§5Collect all wild vegetable dishes, turning every herb of the wild into a meal");
+        translationBuilder.add("advancement.wildernesss-delight.refreshing.title", "§aRefreshing");
+        translationBuilder.add("advancement.wildernesss-delight.refreshing.desc", "§aEat a mint leaf and feel the cool refreshment");
+
+        translationBuilder.add(ModBlock.WILDERNESS_BANNER, "Wilderness Wall Banner");
+        translationBuilder.add("item.wildernesss-delight.wilderness_banner", "Wilderness Banner");
+        translationBuilder.add(ModBlock.WILDERNESS_BANNER_STANDING, "Wilderness Banner");
+        translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line1", "Reward for completing all dishes");
+        translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line2", "When placed:");
+        translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line3", "Grants Speed effect within 8 blocks");
+        translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line4", "Thank you for playing Wilderness Delight!");
     }
 }

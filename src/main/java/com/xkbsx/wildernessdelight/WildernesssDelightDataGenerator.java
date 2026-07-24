@@ -21,6 +21,7 @@ public class WildernesssDelightDataGenerator implements DataGeneratorEntrypoint 
 		 pack.addProvider(ModWorldGenerator::new);
 		 pack.addProvider(ModRecipesProvider::new);
 		 pack.addProvider(ModItemTagProvider::new);
+		 pack.addProvider(ModAdvancementProvider::new);
 	}
 
 	@Override

@@ -84,6 +84,8 @@ public class ModItemsGroup {
                 entries.add(ModItems.ICE_FLOWER_MINT_SOUP);
                 // ═══════════ 🍡 甜点 ═══════════
                 entries.add(ModItems.CUDWEED_RICE_DUMPLING);
+                // ═══════════ 🚩 旗帜 ═══════════
+                entries.add(ModBlock.WILDERNESS_BANNER_ITEM);
             })
             .build();
 

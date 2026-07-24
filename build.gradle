@@ -62,6 +62,33 @@ processResources {
 	}
 }
 
+sourceSets {
+	main {
+		resources {
+			srcDirs += [
+				'src/main/generated'
+			]
+			exclude '.cache'
+		}
+	}
+}
+
+tasks.withType(ProcessResources).configureEach {
+	duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+tasks.named('runDatagen') {
+	doLast {
+		fileTree(dir: 'src/main/generated/data/wildernesss-delight/advancements', include: '**/*.json').each { f ->
+			def text = f.text
+			def cleaned = text.replaceAll(',?\\s*"sends_telemetry_event": true,?\\s*', '')
+			if (cleaned != text) {
+				f.text = cleaned
+			}
+		}
+	}
+}
+
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17
 }
@@ -71,6 +98,10 @@ java {
 	// if it is present.
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
+
+tasks.named('sourcesJar') {
+	dependsOn tasks.named('runDatagen')
+}
 
 	sourceCompatibility = JavaVersion.VERSION_17
 	targetCompatibility = JavaVersion.VERSION_17
