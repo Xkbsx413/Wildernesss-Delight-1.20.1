@@ -33,6 +33,10 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> LYCORIS_COVERED_LAND = of("lycoris_covered_land");
     public static final RegistryKey<PlacedFeature> BUTTERCUP_COVERED_LAND = of("buttercup_covered_land");
     public static final RegistryKey<PlacedFeature> CUDWEED_COVERED_LAND = of("cudweed_covered_land");
+    public static final RegistryKey<PlacedFeature> FOXTAIL_GRASS_COVERED_LAND = of("foxtail_grass_covered_land");
+    public static final RegistryKey<PlacedFeature> GINSENG_COVERED_LAND = of("ginseng_covered_land");
+    public static final RegistryKey<PlacedFeature> LINGZHI_COVERED_LAND = of("lingzhi_covered_land");
+    public static final RegistryKey<PlacedFeature> HERICIUM_COVERED_LAND = of("hericium_covered_land");
     public static final RegistryKey<PlacedFeature> CHINESE_TOON_SMALL_TREE_LAND = of("chinese_toon_small_tree_land");
     public static final RegistryKey<PlacedFeature> CHINESE_TOON_NORMAL_TREE_LAND = of("chinese_toon_normal_tree_land");
     public static final RegistryKey<PlacedFeature> TREE_OF_HEAVEN_SMALL_TREE_LAND = of("tree_of_heaven_small_tree_land");
@@ -57,6 +61,10 @@ public class ModPlacedFeatures {
         register(featureRegisterable, lookup, LYCORIS_COVERED_LAND, ModConfiguredFeatures.LYCORIS_COVERED, 7);
         register(featureRegisterable, lookup, BUTTERCUP_COVERED_LAND, ModConfiguredFeatures.BUTTERCUP_COVERED, 7);
         register(featureRegisterable, lookup, CUDWEED_COVERED_LAND, ModConfiguredFeatures.CUDWEED_COVERED, 7);
+        register(featureRegisterable, lookup, FOXTAIL_GRASS_COVERED_LAND, ModConfiguredFeatures.FOXTAIL_GRASS_COVERED, 7);
+        register(featureRegisterable, lookup, GINSENG_COVERED_LAND, ModConfiguredFeatures.GINSENG_COVERED, 7);
+        register(featureRegisterable, lookup, LINGZHI_COVERED_LAND, ModConfiguredFeatures.LINGZHI_COVERED, 7);
+        register(featureRegisterable, lookup, HERICIUM_COVERED_LAND, ModConfiguredFeatures.HERICIUM_COVERED, 7);
         PlacedFeatures.register(featureRegisterable, CHINESE_TOON_SMALL_TREE_LAND,
                 lookup.getOrThrow(ModConfiguredFeatures.CHINESE_TOON_SMALL_TREE),
                 RarityFilterPlacementModifier.of(6),

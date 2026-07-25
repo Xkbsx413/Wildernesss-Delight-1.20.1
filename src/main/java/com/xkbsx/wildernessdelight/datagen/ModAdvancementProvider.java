@@ -1,12 +1,14 @@
 package com.xkbsx.wildernessdelight.datagen;
 
 import com.xkbsx.wildernessdelight.item.ModItems;
+import com.xkbsx.wildernessdelight.potion.ModPotions;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.AdvancementRewards;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
+import net.minecraft.item.Items;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -46,6 +48,8 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("reed_shoot", InventoryChangedCriterion.Conditions.items(ModItems.REED_SHOOT))
                 .criterion("cudweed", InventoryChangedCriterion.Conditions.items(ModItems.CUDWEED))
                 .criterion("chinese_toon", InventoryChangedCriterion.Conditions.items(ModItems.CHINESE_TOON_SPROUT))
+                .criterion("ginseng", InventoryChangedCriterion.Conditions.items(ModItems.GINSENG))
+                .criterion("lingzhi", InventoryChangedCriterion.Conditions.items(ModItems.LINGZHI))
                 .build(exporter, "wildernesss-delight:forager");
 
         Advancement.Builder.create()
@@ -75,8 +79,18 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                                 ModItems.COOKED_WATER_DROPWORT).build()))
                 .build(exporter, "wildernesss-delight:cook");
 
-        Advancement chef = Advancement.Builder.create()
+        Advancement hundred_herbs = Advancement.Builder.create()
                 .parent(cook)
+                .display(ModItems.HUNDRED_HERBS_DELICACY,
+                        Text.translatable("advancement.wildernesss-delight.hundred_herbs.title"),
+                        Text.translatable("advancement.wildernesss-delight.hundred_herbs.desc"),
+                        null, AdvancementFrame.GOAL, true, true, false)
+                .rewards(AdvancementRewards.Builder.experience(100).build())
+                .criterion("hundred_herbs_delicacy", InventoryChangedCriterion.Conditions.items(ModItems.HUNDRED_HERBS_DELICACY))
+                .build(exporter, "wildernesss-delight:hundred_herbs");
+
+        Advancement chef = Advancement.Builder.create()
+                .parent(hundred_herbs)
                 .display(ModItems.CHINESE_TOON_SCRAMBLED_EGGS,
                         Text.translatable("advancement.wildernesss-delight.chef.title"),
                         Text.translatable("advancement.wildernesss-delight.chef.desc"),
@@ -92,7 +106,9 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                                 ModItems.HORSEWEED_MOZZARELLA_HONEY, ModItems.MIXED_WILD_STIR_FRY,
                                 ModItems.DOUBLE_WILD_VEG_SALAD, ModItems.WILD_VEG_PANCAKE,
                                 ModItems.THREE_FRESH_SALAD, ModItems.WILD_VEGETABLE_SOUP,
-                                ModItems.MINT_LAMB_HAM, ModItems.CUDWEED_RICE_DUMPLING).build()))
+                                ModItems.MINT_LAMB_HAM, ModItems.CUDWEED_RICE_DUMPLING,
+                                ModItems.GINSENG_SOUP, ModItems.HERICIUM_COOKIE,
+                                ModItems.LINGZHI_CHICKEN_SOUP, ModItems.HUNDRED_HERBS_DELICACY).build()))
                 .build(exporter, "wildernesss-delight:chef");
 
         Advancement.Builder.create()
@@ -124,6 +140,10 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("mint_lamb_ham", InventoryChangedCriterion.Conditions.items(ModItems.MINT_LAMB_HAM))
                 .criterion("ice_flower_fruit_salad", InventoryChangedCriterion.Conditions.items(ModItems.ICE_FLOWER_FRUIT_SALAD))
                 .criterion("cudweed_rice_dumpling", InventoryChangedCriterion.Conditions.items(ModItems.CUDWEED_RICE_DUMPLING))
+                .criterion("ginseng_soup", InventoryChangedCriterion.Conditions.items(ModItems.GINSENG_SOUP))
+                .criterion("hericium_cookie", InventoryChangedCriterion.Conditions.items(ModItems.HERICIUM_COOKIE))
+                .criterion("lingzhi_chicken_soup", InventoryChangedCriterion.Conditions.items(ModItems.LINGZHI_CHICKEN_SOUP))
+                .criterion("hundred_herbs_delicacy", InventoryChangedCriterion.Conditions.items(ModItems.HUNDRED_HERBS_DELICACY))
                 .build(exporter, "wildernesss-delight:feast");
 
         Advancement.Builder.create()
@@ -147,5 +167,19 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .rewards(AdvancementRewards.Builder.experience(25).build())
                 .criterion("mint", InventoryChangedCriterion.Conditions.items(ModItems.MINT))
                 .build(exporter, "wildernesss-delight:refreshing");
+
+        Advancement.Builder.create()
+                .parent(root)
+                .display(ModItems.FOXTAIL_GRASS,
+                        Text.translatable("advancement.wildernesss-delight.grass_wolf_trail.title"),
+                        Text.translatable("advancement.wildernesss-delight.grass_wolf_trail.desc"),
+                        null, AdvancementFrame.GOAL, true, true, false)
+                .rewards(AdvancementRewards.Builder.experience(100).build())
+                .criterion("fluffy_tail", InventoryChangedCriterion.Conditions.items(
+                        ItemPredicate.Builder.create()
+                                .items(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION)
+                                .potion(ModPotions.FLUFFY_TAIL)
+                                .build()))
+                .build(exporter, "wildernesss-delight:grass_wolf_trail");
     }
 }

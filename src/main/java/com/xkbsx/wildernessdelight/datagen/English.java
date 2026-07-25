@@ -17,7 +17,8 @@ public class English extends FabricLanguageProvider {
            translationBuilder.add("item.wildernesss-delight.shepherd_purse","shepherd purse leaves");
            translationBuilder.add(ModBlock.CROP_DANDELION,"wild dandelion");
            translationBuilder.add("item.wildernesss-delight.crop_dandelion_block","dandelion crop");
-           translationBuilder.add("item.wildernesss-delight.crop_dandelion","dandelion leaves");
+            translationBuilder.add("item.wildernesss-delight.crop_dandelion","dandelion leaves");
+            translationBuilder.add("item.wildernesss-delight.dandelion_clock","Dandelion Clock");
            translationBuilder.add(ModBlock.HOUTTUYNIA,"wild houttuynia");
            translationBuilder.add("item.wildernesss-delight.houttuynia_block","houttuynia");
            translationBuilder.add("item.wildernesss-delight.houttuynia","houttuynia leaves");
@@ -48,14 +49,25 @@ public class English extends FabricLanguageProvider {
            translationBuilder.add(ModBlock.LYCORIS,"wild lycoris");
            translationBuilder.add("item.wildernesss-delight.lycoris_block","lycoris");
            translationBuilder.add("item.wildernesss-delight.lycoris","lycoris leaves");
-           translationBuilder.add("item.wildernesss-delight.tree_of_heaven_block","tree of heaven");
-           translationBuilder.add("item.wildernesss-delight.tree_of_heaven","tree of heaven leaves");
+            translationBuilder.add("item.wildernesss-delight.tree_of_heaven","tree of heaven leaves");
            translationBuilder.add(ModBlock.BUTTERCUP,"wild buttercup");
            translationBuilder.add("item.wildernesss-delight.buttercup_block","buttercup");
            translationBuilder.add("item.wildernesss-delight.buttercup","buttercup leaves");
-           translationBuilder.add(ModBlock.CUDWEED,"wild cudweed");
-           translationBuilder.add("item.wildernesss-delight.cudweed_block","cudweed");
-           translationBuilder.add("item.wildernesss-delight.cudweed","cudweed leaves");
+            translationBuilder.add(ModBlock.CUDWEED,"wild cudweed");
+            translationBuilder.add("item.wildernesss-delight.cudweed_block","cudweed");
+            translationBuilder.add(ModBlock.FOXTAIL_GRASS,"wild foxtail grass");
+            translationBuilder.add("item.wildernesss-delight.foxtail_grass_block","foxtail grass");
+            translationBuilder.add("item.wildernesss-delight.foxtail_grass","foxtail grass");
+            translationBuilder.add(ModBlock.GINSENG,"wild ginseng");
+            translationBuilder.add("item.wildernesss-delight.ginseng_block","ginseng");
+            translationBuilder.add("item.wildernesss-delight.ginseng","ginseng");
+            translationBuilder.add(ModBlock.LINGZHI,"wild lingzhi");
+            translationBuilder.add("item.wildernesss-delight.lingzhi_block","lingzhi");
+            translationBuilder.add("item.wildernesss-delight.lingzhi","lingzhi");
+            translationBuilder.add(ModBlock.HERICIUM,"wild hericium");
+            translationBuilder.add("item.wildernesss-delight.hericium_block","hericium");
+            translationBuilder.add("item.wildernesss-delight.hericium","hericium");
+            translationBuilder.add("item.wildernesss-delight.cudweed","cudweed leaves");
            translationBuilder.add(ModBlock.ICE_FLOWERS,"ice flowers");
            translationBuilder.add("item.wildernesss-delight.ice_flowers","ice flowers");
            translationBuilder.add(ModBlock.POTTED_ICE_FLOWERS,"potted ice flowers");
@@ -92,6 +104,11 @@ public class English extends FabricLanguageProvider {
             translationBuilder.add("item.wildernesss-delight.wild_veg_pancake","Wild Vegetable Pancake");
             translationBuilder.add("item.wildernesss-delight.three_fresh_salad","Three Fresh Salad");
             translationBuilder.add("item.wildernesss-delight.wild_vegetable_soup","Wild Vegetable Soup");
+            // ═══════════ 🌿 New Dishes ═══════════
+            translationBuilder.add("item.wildernesss-delight.ginseng_soup","Ginseng Soup");
+            translationBuilder.add("item.wildernesss-delight.hericium_cookie","Hericium Cookies");
+            translationBuilder.add("item.wildernesss-delight.lingzhi_chicken_soup","Lingzhi Chicken Soup");
+            translationBuilder.add("item.wildernesss-delight.hundred_herbs_delicacy","Hundred Herbs Delicacy");
             // ═══════════ 🔥 烤炉料理 ═══════════
             translationBuilder.add("item.wildernesss-delight.mint_lamb_ham","Mint Lamb Ham");
             // ═══════════ ⚒️ 合成台料理 ═══════════
@@ -102,6 +119,17 @@ public class English extends FabricLanguageProvider {
             translationBuilder.add("item.wildernesss-delight.ice_flower_mint_soup","Ice Flower Mint Soup");
             // ═══════════ 🍡 甜点 ═══════════
             translationBuilder.add("item.wildernesss-delight.cudweed_rice_dumpling","Cudweed Rice Dumpling");
+
+            translationBuilder.add("effect.wildernesss-delight.cool","Cool");
+            translationBuilder.add("effect.wildernesss-delight.fluffy_tail","Fluffy Tail");
+            translationBuilder.add("effect.wildernesss-delight.energy","Energy");
+            translationBuilder.add("effect.wildernesss-delight.body_tempering","Body Tempering");
+            translationBuilder.add("effect.wildernesss-delight.vitality","Vitality");
+
+            translationBuilder.add("item.minecraft.potion.effect.fluffy_tail","Potion of Fluffy Tail");
+            translationBuilder.add("item.minecraft.splash_potion.effect.fluffy_tail","Splash Potion of Fluffy Tail");
+            translationBuilder.add("item.minecraft.lingering_potion.effect.fluffy_tail","Lingering Potion of Fluffy Tail");
+            translationBuilder.add("item.minecraft.tipped_arrow.effect.fluffy_tail","Arrow of Fluffy Tail");
 
             translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight","Wilderness Delight");
 
@@ -115,14 +143,18 @@ public class English extends FabricLanguageProvider {
         translationBuilder.add("advancement.wildernesss-delight.toxicologist.desc", "§7You harvested a poisonous wild plant. Curiosity nearly brought disaster.");
         translationBuilder.add("advancement.wildernesss-delight.cook.title", "§aWild Greens Roast");
         translationBuilder.add("advancement.wildernesss-delight.cook.desc", "§7Cook wild plants over fire, hoping for a taste of the wilderness.");
+        translationBuilder.add("advancement.wildernesss-delight.hundred_herbs.title", "§eHundred Herbs Dish");
+        translationBuilder.add("advancement.wildernesss-delight.hundred_herbs.desc", "§eCook a Hundred Herbs Delicacy, turning wild treasures into a delicacy");
         translationBuilder.add("advancement.wildernesss-delight.chef.title", "§6Wild Chef");
         translationBuilder.add("advancement.wildernesss-delight.chef.desc", "§7Prepare a pot-cooked dish");
         translationBuilder.add("advancement.wildernesss-delight.drink.title", "§eRefreshment");
         translationBuilder.add("advancement.wildernesss-delight.drink.desc", "§7Prepare a drink");
         translationBuilder.add("advancement.wildernesss-delight.feast.title", "§5Feast of a Hundred Herbs");
         translationBuilder.add("advancement.wildernesss-delight.feast.desc", "§5Collect all wild vegetable dishes, turning every herb of the wild into a meal");
-        translationBuilder.add("advancement.wildernesss-delight.refreshing.title", "§aRefreshing");
-        translationBuilder.add("advancement.wildernesss-delight.refreshing.desc", "§aEat a mint leaf and feel the cool refreshment");
+            translationBuilder.add("advancement.wildernesss-delight.refreshing.title", "§aRefreshing");
+            translationBuilder.add("advancement.wildernesss-delight.refreshing.desc", "§aEat a mint leaf and feel the cool refreshment");
+            translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.title", "§eGrass Lures Wolf");
+            translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.desc", "§eObtain the Fluffy Tail effect and let wolves follow your trail");
 
         translationBuilder.add(ModBlock.WILDERNESS_BANNER, "Wilderness Wall Banner");
         translationBuilder.add("item.wildernesss-delight.wilderness_banner", "Wilderness Banner");

@@ -33,6 +33,10 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> LYCORIS_COVERED = of("lycoris_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> BUTTERCUP_COVERED = of("buttercup_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CUDWEED_COVERED = of("cudweed_covered");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FOXTAIL_GRASS_COVERED = of("foxtail_grass_covered");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> GINSENG_COVERED = of("ginseng_covered");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LINGZHI_COVERED = of("lingzhi_covered");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> HERICIUM_COVERED = of("hericium_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHINESE_TOON_SMALL_TREE = of("chinese_toon_small_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHINESE_TOON_NORMAL_TREE = of("chinese_toon_normal_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREE_OF_HEAVEN_SMALL_TREE = of("tree_of_heaven_small_tree");
@@ -55,6 +59,10 @@ public class ModConfiguredFeatures {
         register(featureRegisterable, LYCORIS_COVERED, ModBlock.LYCORIS, 5);
         register(featureRegisterable, BUTTERCUP_COVERED, ModBlock.BUTTERCUP, 9);
         register(featureRegisterable, CUDWEED_COVERED, ModBlock.CUDWEED, 7);
+        register(featureRegisterable, FOXTAIL_GRASS_COVERED, ModBlock.FOXTAIL_GRASS, 7);
+        register(featureRegisterable, GINSENG_COVERED, ModBlock.GINSENG, 6);
+        register(featureRegisterable, LINGZHI_COVERED, ModBlock.LINGZHI, 6);
+        register(featureRegisterable, HERICIUM_COVERED, ModBlock.HERICIUM, 7);
 
         ConfiguredFeatures.register(featureRegisterable, CHINESE_TOON_SMALL_TREE, Feature.TREE,
                 new TreeFeatureConfig.Builder(

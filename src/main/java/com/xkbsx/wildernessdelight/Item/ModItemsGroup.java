@@ -10,6 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+
 public class ModItemsGroup {
     public static final ItemGroup Wilderness_Delight = FabricItemGroup.builder()
             .displayName(Text.translatable("itemGroup.wilderness-delight.wilderness-delight"))
@@ -31,12 +32,16 @@ public class ModItemsGroup {
                 entries.add(ModBlock.LYCORIS_ITEM);
                 entries.add(ModBlock.BUTTERCUP_ITEM);
                 entries.add(ModBlock.CUDWEED_ITEM);
+                entries.add(ModBlock.GINSENG_ITEM);
+                entries.add(ModBlock.LINGZHI_ITEM);
+                entries.add(ModBlock.HERICIUM_ITEM);
                 entries.add(ModBlock.CHINESE_TOON_SAPLING_ITEM);
                 entries.add(ModBlock.TREE_OF_HEAVEN_SAPLING_ITEM);
                 entries.add(ModItems.ICE_FLOWERS);
                 entries.add(ModItems.HORSEWEED);
                 entries.add(ModItems.SHEPHERD_PURSE);
                 entries.add(ModItems.CROP_DANDELION);
+                entries.add(ModItems.DANDELION_CLOCK);
                 entries.add(ModItems.HOUTTUYNIA);
                 entries.add(ModItems.BRACKEN_FERN_SHOOT);
                 entries.add(ModItems.WILD_GARLIC);
@@ -50,6 +55,10 @@ public class ModItemsGroup {
                 entries.add(ModItems.TREE_OF_HEAVEN);
                 entries.add(ModItems.BUTTERCUP);
                 entries.add(ModItems.CUDWEED);
+                entries.add(ModItems.FOXTAIL_GRASS);
+                entries.add(ModItems.GINSENG);
+                entries.add(ModItems.LINGZHI);
+                entries.add(ModItems.HERICIUM);
                 entries.add(ModItems.CHINESE_TOON_SPROUT);
                 entries.add(ModItems.COOKED_BRACKEN_FERN_SHOOT);
                 entries.add(ModItems.COOKED_REED_SHOOT);
@@ -82,6 +91,11 @@ public class ModItemsGroup {
                 entries.add(ModItems.MINT_TEA);
                 entries.add(ModItems.DANDELION_ROOT_TEA);
                 entries.add(ModItems.ICE_FLOWER_MINT_SOUP);
+                // ═══════════ 🌿 新食材 ═══════════
+                entries.add(ModItems.GINSENG_SOUP);
+                entries.add(ModItems.HERICIUM_COOKIE);
+                entries.add(ModItems.LINGZHI_CHICKEN_SOUP);
+                entries.add(ModItems.HUNDRED_HERBS_DELICACY);
                 // ═══════════ 🍡 甜点 ═══════════
                 entries.add(ModItems.CUDWEED_RICE_DUMPLING);
                 // ═══════════ 🚩 旗帜 ═══════════

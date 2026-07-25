@@ -3,7 +3,9 @@
 	"package": "com.xkbsx.wildernessdelight.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"FluffyTailMixin",
+		"EnergyMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

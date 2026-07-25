@@ -45,6 +45,10 @@ public class Model extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlock.LYCORIS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.BUTTERCUP, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.CUDWEED, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlock.FOXTAIL_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlock.GINSENG, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlock.LINGZHI, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlock.HERICIUM, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlock.CHINESE_TOON_LEAVES);
         blockStateModelGenerator.registerTintableCross(ModBlock.CHINESE_TOON_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlock.TREE_OF_HEAVEN_LEAVES);
@@ -56,6 +60,7 @@ public class Model extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HORSEWEED, Models.GENERATED);
         itemModelGenerator.register(ModItems.SHEPHERD_PURSE, Models.GENERATED);
         itemModelGenerator.register(ModItems.CROP_DANDELION, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DANDELION_CLOCK, Models.GENERATED);
         itemModelGenerator.register(ModItems.HOUTTUYNIA, Models.GENERATED);
         itemModelGenerator.register(ModItems.BRACKEN_FERN_SHOOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.WILD_GARLIC, Models.GENERATED);
@@ -69,6 +74,9 @@ public class Model extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TREE_OF_HEAVEN, Models.GENERATED);
         itemModelGenerator.register(ModItems.BUTTERCUP, Models.GENERATED);
         itemModelGenerator.register(ModItems.CUDWEED, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GINSENG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LINGZHI, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HERICIUM, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHINESE_TOON_SPROUT, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_BRACKEN_FERN_SHOOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_REED_SHOOT, Models.GENERATED);
@@ -103,5 +111,10 @@ public class Model extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ICE_FLOWER_MINT_SOUP, Models.GENERATED);
         // ═══════════ 🍡 甜点 ═══════════
         itemModelGenerator.register(ModItems.CUDWEED_RICE_DUMPLING, Models.GENERATED);
+        // ═══════════ 🌿 新食材 ═══════════
+        itemModelGenerator.register(ModItems.GINSENG_SOUP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HERICIUM_COOKIE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LINGZHI_CHICKEN_SOUP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HUNDRED_HERBS_DELICACY, Models.GENERATED);
     }
 }

@@ -35,6 +35,14 @@ public class ModItems {
     public static final Item COOKED_PURSLANE = registerItems("cooked_purslane", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Purslane)));//烤马齿苋
     public static final Item COOKED_SHEPHERD_PURSE = registerItems("cooked_shepherd_purse", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Shepherd_Purse)));//烤荠菜
     public static final Item COOKED_WATER_DROPWORT = registerItems("cooked_water_dropwort", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Water_Dropwort)));//烤水芹
+    public static final Item FOXTAIL_GRASS = registerItems("foxtail_grass", new BlockItem(ModBlock.FOXTAIL_GRASS, new Item.Settings()));//狗尾巴草
+    public static final Item GINSENG = registerItems("ginseng", new Item(new Item.Settings().food(ModFoodComponents.Ginseng)));//人参
+    public static final Item LINGZHI = registerItems("lingzhi", new Item(new Item.Settings().food(ModFoodComponents.Lingzhi)));//灵芝
+    public static final Item HERICIUM = registerItems("hericium", new Item(new Item.Settings().food(ModFoodComponents.Hericium)));//猴头菇
+    public static final Item GINSENG_SOUP = registerItems("ginseng_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Ginseng_Soup), false));//人参汤
+    public static final Item HERICIUM_COOKIE = registerItems("hericium_cookie", new Item(new Item.Settings().food(ModFoodComponents.Hericium_Cookie)));//猴头菇饼干
+    public static final Item LINGZHI_CHICKEN_SOUP = registerItems("lingzhi_chicken_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Lingzhi_Chicken_Soup), false));//灵芝鸡汤
+    public static final Item DANDELION_CLOCK = registerItems("dandelion_clock", new DandelionClockItem(new Item.Settings()));//蒲公英毛球
 
     // ═══════════ 🥘 锅料理 ═══════════
     public static final Item CHINESE_TOON_SCRAMBLED_EGGS = registerItems("chinese_toon_scrambled_eggs", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Chinese_Toon_Scrambled_Eggs), false));//香椿炒蛋
@@ -63,6 +71,7 @@ public class ModItems {
     public static final Item ICE_FLOWER_MINT_SOUP = registerItems("ice_flower_mint_soup", new ContainerFoodItem(Items.GLASS_BOTTLE, new Item.Settings().food(ModFoodComponents.Ice_Flower_Mint_Soup), true));//寒霜花汤
     // ═══════════ 🍡 甜点 ═══════════
     public static final Item CUDWEED_RICE_DUMPLING = registerItems("cudweed_rice_dumpling", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Cudweed_Rice_Dumpling), false));//鼠曲草青团
+    public static final Item HUNDRED_HERBS_DELICACY = registerItems("hundred_herbs_delicacy", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Hundred_Herbs_Delicacy), false));//百草灵膳
 
     public static Item registerItems(String id, Item item) {
         if (item instanceof BlockItem) {

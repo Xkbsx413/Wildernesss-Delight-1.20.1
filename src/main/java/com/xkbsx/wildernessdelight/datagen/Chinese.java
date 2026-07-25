@@ -18,6 +18,7 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add(ModBlock.CROP_DANDELION, "野生蒲公英");
         translationBuilder.add("item.wildernesss-delight.crop_dandelion_block", "作物蒲公英");
         translationBuilder.add("item.wildernesss-delight.crop_dandelion", "蒲公英叶");
+        translationBuilder.add("item.wildernesss-delight.dandelion_clock", "蒲公英毛球");
         translationBuilder.add(ModBlock.HOUTTUYNIA,"野生折耳根");
         translationBuilder.add("item.wildernesss-delight.houttuynia_block","折耳根");
         translationBuilder.add("item.wildernesss-delight.houttuynia","折耳根");
@@ -48,13 +49,24 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add(ModBlock.LYCORIS,"野生石蒜");
         translationBuilder.add("item.wildernesss-delight.lycoris_block","石蒜");
         translationBuilder.add("item.wildernesss-delight.lycoris","石蒜");
-        translationBuilder.add("item.wildernesss-delight.tree_of_heaven_block","臭椿");
         translationBuilder.add("item.wildernesss-delight.tree_of_heaven","臭椿");
         translationBuilder.add(ModBlock.BUTTERCUP,"野生石龙芮");
         translationBuilder.add("item.wildernesss-delight.buttercup_block","石龙芮");
         translationBuilder.add("item.wildernesss-delight.buttercup","石龙芮");
         translationBuilder.add(ModBlock.CUDWEED,"野生鼠曲草");
         translationBuilder.add("item.wildernesss-delight.cudweed_block","鼠曲草");
+        translationBuilder.add(ModBlock.FOXTAIL_GRASS,"野生狗尾巴草");
+        translationBuilder.add("item.wildernesss-delight.foxtail_grass_block","狗尾巴草");
+        translationBuilder.add("item.wildernesss-delight.foxtail_grass","狗尾巴草");
+        translationBuilder.add(ModBlock.GINSENG,"野生人参");
+        translationBuilder.add("item.wildernesss-delight.ginseng_block","人参");
+        translationBuilder.add("item.wildernesss-delight.ginseng","人参");
+        translationBuilder.add(ModBlock.LINGZHI,"野生灵芝");
+        translationBuilder.add("item.wildernesss-delight.lingzhi_block","灵芝");
+        translationBuilder.add("item.wildernesss-delight.lingzhi","灵芝");
+        translationBuilder.add(ModBlock.HERICIUM,"野生猴头菇");
+        translationBuilder.add("item.wildernesss-delight.hericium_block","猴头菇");
+        translationBuilder.add("item.wildernesss-delight.hericium","猴头菇");
         translationBuilder.add("item.wildernesss-delight.cudweed","鼠曲草");
         translationBuilder.add(ModBlock.ICE_FLOWERS,"寒霜花");
         translationBuilder.add("item.wildernesss-delight.ice_flowers","寒霜花");
@@ -92,6 +104,11 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("item.wildernesss-delight.wild_veg_pancake", "野菜薄饼");
         translationBuilder.add("item.wildernesss-delight.three_fresh_salad", "三鲜沙拉");
         translationBuilder.add("item.wildernesss-delight.wild_vegetable_soup", "野菜浓汤");
+        // ═══════════ 🌿 新食材料理 ═══════════
+        translationBuilder.add("item.wildernesss-delight.ginseng_soup", "人参汤");
+        translationBuilder.add("item.wildernesss-delight.hericium_cookie", "猴头菇饼干");
+        translationBuilder.add("item.wildernesss-delight.lingzhi_chicken_soup", "灵芝鸡汤");
+        translationBuilder.add("item.wildernesss-delight.hundred_herbs_delicacy", "百草灵膳");
         // ═══════════ 🔥 烤炉料理 ═══════════
         translationBuilder.add("item.wildernesss-delight.mint_lamb_ham", "薄荷羊肉");
         // ═══════════ ⚒️ 合成台料理 ═══════════
@@ -102,6 +119,17 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("item.wildernesss-delight.ice_flower_mint_soup", "寒霜花汤");
         // ═══════════ 🍡 甜点 ═══════════
         translationBuilder.add("item.wildernesss-delight.cudweed_rice_dumpling", "鼠曲草青团");
+
+        translationBuilder.add("effect.wildernesss-delight.cool", "清凉");
+        translationBuilder.add("effect.wildernesss-delight.fluffy_tail", "绒尾");
+        translationBuilder.add("effect.wildernesss-delight.energy", "劲气");
+        translationBuilder.add("effect.wildernesss-delight.body_tempering", "淬体");
+        translationBuilder.add("effect.wildernesss-delight.vitality", "元气充盈");
+
+        translationBuilder.add("item.minecraft.potion.effect.fluffy_tail", "绒尾药水");
+        translationBuilder.add("item.minecraft.splash_potion.effect.fluffy_tail", "喷溅型绒尾药水");
+        translationBuilder.add("item.minecraft.lingering_potion.effect.fluffy_tail", "滞留型绒尾药水");
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.fluffy_tail", "绒尾之箭");
 
         translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight", "原野拾穗");
 
@@ -115,6 +143,8 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("advancement.wildernesss-delight.toxicologist.desc", "§a收获一株有毒野菜，好奇心差点酿成灾祸");
         translationBuilder.add("advancement.wildernesss-delight.cook.title", "§a野蔬炙烤");
         translationBuilder.add("advancement.wildernesss-delight.cook.desc", "§a架起炉火烹制野菜，期待一口山野风味");
+        translationBuilder.add("advancement.wildernesss-delight.hundred_herbs.title", "§e百珍入膳");
+        translationBuilder.add("advancement.wildernesss-delight.hundred_herbs.desc", "§e烹制一道百草灵膳，将山野奇珍化为珍馐");
         translationBuilder.add("advancement.wildernesss-delight.chef.title", "§6荒野料理");
         translationBuilder.add("advancement.wildernesss-delight.chef.desc", "§7制作一道野菜料理");
         translationBuilder.add("advancement.wildernesss-delight.drink.title", "§e清凉一刻");
@@ -123,6 +153,8 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("advancement.wildernesss-delight.feast.desc", "§5集齐全部野菜料理，将山野草木尽数化为盘中餐");
         translationBuilder.add("advancement.wildernesss-delight.refreshing.title", "§a沁人心脾");
         translationBuilder.add("advancement.wildernesss-delight.refreshing.desc", "§a吃下一片薄荷叶，感受清凉舒爽");
+        translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.title", "§e草引狼踪");
+        translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.desc", "§e获得绒尾效果，让狼群追随你的足迹");
 
         translationBuilder.add(ModBlock.WILDERNESS_BANNER, "§e全物品收集者旗帜 : §a原野拾穗");
         translationBuilder.add("item.wildernesss-delight.wilderness_banner", "§e全物品收集者旗帜 : §a原野拾穗");

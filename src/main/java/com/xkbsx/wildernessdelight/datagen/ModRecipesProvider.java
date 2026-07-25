@@ -248,6 +248,33 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .criterion("has_ice_flowers", conditionsFromItem(ModItems.ICE_FLOWERS))
                 .offerTo(consumer);
 
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // 🌿 新食材料理
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        // 22. 百草灵膳（饥饿15/饱和0.80）
+        offerPotCooking(consumer, "hundred_herbs_delicacy",
+                List.of(IngredientEntry.of(ModItems.GINSENG), IngredientEntry.of(ModItems.LINGZHI),
+                        IngredientEntry.of(ModItems.ICE_FLOWERS), IngredientEntry.of(Items.BAMBOO),
+                        IngredientEntry.of(ModItemTagProvider.WILD_VEGETABLES), IngredientEntry.of(fromId("farm_and_charm:butter"))),
+                Items.BOWL, ModItems.HUNDRED_HERBS_DELICACY, 1);
+
+        // 人参汤（饥饿9/饱和0.55）
+        offerRoaster(consumer, "ginseng_soup",
+                List.of(IngredientEntry.of(ModItems.GINSENG), IngredientEntry.of(Items.CARROT),
+                        IngredientEntry.of(Items.POTATO), IngredientEntry.of(fromId("farm_and_charm:tomato"))),
+                Items.BOWL, ModItems.GINSENG_SOUP, 2);
+        // 猴头菇饼干（饥饿5/饱和0.40）
+        offerStove(consumer, "hericium_cookie",
+                List.of(IngredientEntry.of(ModItems.HERICIUM), IngredientEntry.of(fromId("farm_and_charm:dough")),
+                        IngredientEntry.of(Items.SUGAR)),
+                Items.BOWL, ModItems.HERICIUM_COOKIE, 4);
+        // 灵芝鸡汤（饥饿11/饱和0.60）
+        offerRoaster(consumer, "lingzhi_chicken_soup",
+                List.of(IngredientEntry.of(ModItems.LINGZHI), IngredientEntry.of(Items.CHICKEN),
+                        IngredientEntry.of(fromId("farm_and_charm:lettuce")), IngredientEntry.of(ModItems.WILD_GARLIC)),
+                Items.BOWL, ModItems.LINGZHI_CHICKEN_SOUP, 1);
+
         // ═══════════════ 锻造台 (Smithing Transform) ═══════════════
         // 原野旗帜 × 1 + 下界合金升级模板 + 下界合金锭 → 原野旗帜 × 2
         offerSmithingTransform(consumer, "wilderness_banner_smithing",

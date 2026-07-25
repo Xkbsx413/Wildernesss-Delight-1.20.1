@@ -57,6 +57,18 @@ public class ModFlowersGenerator {
                 BiomeKeys.WOODED_BADLANDS, BiomeKeys.MEADOW, BiomeKeys.SNOWY_TAIGA),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CUDWEED_COVERED_LAND);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
+                BiomeKeys.PLAINS, BiomeKeys.FOREST, BiomeKeys.SUNFLOWER_PLAINS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.FOXTAIL_GRASS_COVERED_LAND);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
+                BiomeKeys.TAIGA, BiomeKeys.OLD_GROWTH_PINE_TAIGA, BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.GINSENG_COVERED_LAND);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
+                BiomeKeys.DARK_FOREST, BiomeKeys.BAMBOO_JUNGLE, BiomeKeys.JUNGLE),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.LINGZHI_COVERED_LAND);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
+                BiomeKeys.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.FOREST, BiomeKeys.DARK_FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.HERICIUM_COVERED_LAND);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
                 BiomeKeys.JUNGLE, BiomeKeys.BAMBOO_JUNGLE, BiomeKeys.SPARSE_JUNGLE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CHINESE_TOON_SMALL_TREE_LAND);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
