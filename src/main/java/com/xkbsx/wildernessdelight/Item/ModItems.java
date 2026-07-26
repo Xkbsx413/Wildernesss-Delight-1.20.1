@@ -47,19 +47,19 @@ public class ModItems {
     // ═══════════ 🥘 锅料理 ═══════════
     public static final Item CHINESE_TOON_SCRAMBLED_EGGS = registerItems("chinese_toon_scrambled_eggs", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Chinese_Toon_Scrambled_Eggs), false));//香椿炒蛋
     public static final Item SHEPHERD_PURSE_DUMPLINGS = registerItems("shepherd_purse_dumplings", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Shepherd_Purse_Dumplings), false));//荠菜饺子
-    public static final Item HOUTTUYNIA_SALAD = registerItems("houttuynia_salad", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Houttuynia_Salad), false));//凉拌折耳根
-    public static final Item PURSLANE_MOZZARELLA_SALAD = registerItems("purslane_mozzarella_salad", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Purslane_Mozzarella_Salad), false));//马齿苋沙拉
+    public static final Item HOUTTUYNIA_SALAD = registerItems("houttuynia_salad", new Item(new Item.Settings().food(ModFoodComponents.Houttuynia_Salad)));//凉拌折耳根
+    public static final Item PURSLANE_MOZZARELLA_SALAD = registerItems("purslane_mozzarella_salad", new Item(new Item.Settings().food(ModFoodComponents.Purslane_Mozzarella_Salad)));//马齿苋沙拉
     public static final Item BRACKEN_FERN_WITH_BACON = registerItems("bracken_fern_with_bacon", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Bracken_Fern_With_Bacon), false));//蕨菜炒培根
     public static final Item MUGWORT_WITH_CORN = registerItems("mugwort_with_corn", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Mugwort_With_Corn), false));//芦蒿玉米粒
-    public static final Item WATER_DROPWORT_ONION_SALAD = registerItems("water_dropwort_onion_salad", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Water_Dropwort_Onion_Salad), false));//水芹洋葱沙拉
+    public static final Item WATER_DROPWORT_ONION_SALAD = registerItems("water_dropwort_onion_salad", new Item(new Item.Settings().food(ModFoodComponents.Water_Dropwort_Onion_Salad)));//水芹洋葱沙拉
     public static final Item DANDELION_TOMATO_EGG_SOUP = registerItems("dandelion_tomato_egg_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Dandelion_Tomato_Egg_Soup), false));//蒲公英番茄汤
     public static final Item REED_SHOOT_CHICKEN_LETTUCE = registerItems("reed_shoot_chicken_lettuce", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Reed_Shoot_Chicken_Lettuce), false));//芦苇笋鸡丁
     public static final Item WILD_GARLIC_CORN_PANCAKE = registerItems("wild_garlic_corn_pancake", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Wild_Garlic_Corn_Pancake), false));//野葱玉米烙
     public static final Item HORSEWEED_MOZZARELLA_HONEY = registerItems("horseweed_mozzarella_honey", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Horseweed_Mozzarella_Honey), false));//飞蓬芝士焗
     public static final Item MIXED_WILD_STIR_FRY = registerItems("mixed_wild_stir_fry", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Mixed_Wild_Stir_Fry), false));//山野炒时蔬
-    public static final Item DOUBLE_WILD_VEG_SALAD = registerItems("double_wild_veg_salad", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Double_Wild_Veg_Salad), false));//凉拌双蔬
+    public static final Item DOUBLE_WILD_VEG_SALAD = registerItems("double_wild_veg_salad", new Item(new Item.Settings().food(ModFoodComponents.Double_Wild_Veg_Salad)));//凉拌双蔬
     public static final Item WILD_VEG_PANCAKE = registerItems("wild_veg_pancake", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Wild_Veg_Pancake), false));//野菜薄饼
-    public static final Item THREE_FRESH_SALAD = registerItems("three_fresh_salad", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Three_Fresh_Salad), false));//三鲜沙拉
+    public static final Item THREE_FRESH_SALAD = registerItems("three_fresh_salad", new Item(new Item.Settings().food(ModFoodComponents.Three_Fresh_Salad)));//三鲜沙拉
     public static final Item WILD_VEGETABLE_SOUP = registerItems("wild_vegetable_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Wild_Vegetable_Soup), false));//野菜浓汤
     // ═══════════ 🔥 烤炉料理 ═══════════//锅炉==烤炉
     public static final Item MINT_LAMB_HAM = registerItems("mint_lamb_ham", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Mint_Lamb_Ham), false));//薄荷羊肉

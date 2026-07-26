@@ -79,18 +79,8 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                                 ModItems.COOKED_WATER_DROPWORT).build()))
                 .build(exporter, "wildernesss-delight:cook");
 
-        Advancement hundred_herbs = Advancement.Builder.create()
-                .parent(cook)
-                .display(ModItems.HUNDRED_HERBS_DELICACY,
-                        Text.translatable("advancement.wildernesss-delight.hundred_herbs.title"),
-                        Text.translatable("advancement.wildernesss-delight.hundred_herbs.desc"),
-                        null, AdvancementFrame.GOAL, true, true, false)
-                .rewards(AdvancementRewards.Builder.experience(100).build())
-                .criterion("hundred_herbs_delicacy", InventoryChangedCriterion.Conditions.items(ModItems.HUNDRED_HERBS_DELICACY))
-                .build(exporter, "wildernesss-delight:hundred_herbs");
-
         Advancement chef = Advancement.Builder.create()
-                .parent(hundred_herbs)
+                .parent(cook)
                 .display(ModItems.CHINESE_TOON_SCRAMBLED_EGGS,
                         Text.translatable("advancement.wildernesss-delight.chef.title"),
                         Text.translatable("advancement.wildernesss-delight.chef.desc"),
@@ -111,8 +101,18 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                                 ModItems.LINGZHI_CHICKEN_SOUP, ModItems.HUNDRED_HERBS_DELICACY).build()))
                 .build(exporter, "wildernesss-delight:chef");
 
-        Advancement.Builder.create()
+        Advancement hundred_herbs = Advancement.Builder.create()
                 .parent(chef)
+                .display(ModItems.HUNDRED_HERBS_DELICACY,
+                        Text.translatable("advancement.wildernesss-delight.hundred_herbs.title"),
+                        Text.translatable("advancement.wildernesss-delight.hundred_herbs.desc"),
+                        null, AdvancementFrame.GOAL, true, true, false)
+                .rewards(AdvancementRewards.Builder.experience(100).build())
+                .criterion("hundred_herbs_delicacy", InventoryChangedCriterion.Conditions.items(ModItems.HUNDRED_HERBS_DELICACY))
+                .build(exporter, "wildernesss-delight:hundred_herbs");
+
+        Advancement.Builder.create()
+                .parent(hundred_herbs)
                 .display(ModItems.WILD_VEGETABLE_SOUP,
                         Text.translatable("advancement.wildernesss-delight.feast.title"),
                         Text.translatable("advancement.wildernesss-delight.feast.desc"),

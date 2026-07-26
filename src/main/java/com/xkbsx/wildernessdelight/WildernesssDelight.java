@@ -8,6 +8,7 @@ import com.xkbsx.wildernessdelight.effect.ModEffects;
 import com.xkbsx.wildernessdelight.potion.ModPotions;
 import com.xkbsx.wildernessdelight.world.tree.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.recipe.BrewingRecipeRegistry;
 
@@ -37,6 +38,8 @@ public class WildernesssDelight implements ModInitializer {
 		ModPotions.register();
 		ModWorldGeneration.register();
 		BrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, ModItems.FOXTAIL_GRASS, ModPotions.FLUFFY_TAIL);
+		BrewingRecipeRegistry.registerPotionRecipe(ModPotions.FLUFFY_TAIL, Items.REDSTONE, ModPotions.FLUFFY_TAIL_LONG);
+		BrewingRecipeRegistry.registerPotionRecipe(ModPotions.FLUFFY_TAIL, Items.GLOWSTONE_DUST, ModPotions.FLUFFY_TAIL_STRONG);
 		LOGGER.info("Hello Fabric world!");
 	}
 }

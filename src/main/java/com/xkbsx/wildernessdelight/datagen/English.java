@@ -131,6 +131,16 @@ public class English extends FabricLanguageProvider {
             translationBuilder.add("item.minecraft.lingering_potion.effect.fluffy_tail","Lingering Potion of Fluffy Tail");
             translationBuilder.add("item.minecraft.tipped_arrow.effect.fluffy_tail","Arrow of Fluffy Tail");
 
+            translationBuilder.add("item.minecraft.potion.effect.long_fluffy_tail","Potion of Fluffy Tail");
+            translationBuilder.add("item.minecraft.splash_potion.effect.long_fluffy_tail","Splash Potion of Fluffy Tail");
+            translationBuilder.add("item.minecraft.lingering_potion.effect.long_fluffy_tail","Lingering Potion of Fluffy Tail");
+            translationBuilder.add("item.minecraft.tipped_arrow.effect.long_fluffy_tail","Arrow of Fluffy Tail");
+
+            translationBuilder.add("item.minecraft.potion.effect.strong_fluffy_tail","Potion of Fluffy Tail");
+            translationBuilder.add("item.minecraft.splash_potion.effect.strong_fluffy_tail","Splash Potion of Fluffy Tail");
+            translationBuilder.add("item.minecraft.lingering_potion.effect.strong_fluffy_tail","Lingering Potion of Fluffy Tail");
+            translationBuilder.add("item.minecraft.tipped_arrow.effect.strong_fluffy_tail","Arrow of Fluffy Tail");
+
             translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight","Wilderness Delight");
 
         // ═══════════ Advancements ═══════════

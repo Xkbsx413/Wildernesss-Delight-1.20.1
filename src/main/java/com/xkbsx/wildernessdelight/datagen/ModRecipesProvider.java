@@ -121,16 +121,16 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 List.of(IngredientEntry.of(ModItems.SHEPHERD_PURSE), IngredientEntry.of(fromId("farm_and_charm:dough")),
                         IngredientEntry.of(ModItemTagProvider.MEAT)),
                 Items.BOWL, ModItems.SHEPHERD_PURSE_DUMPLINGS, 3);
-        // 3. 凉拌折耳根（饥饿6/饱和0.55）
-        offerPotCooking(consumer, "houttuynia_salad",
+        // 3. 凉拌折耳根（饥饿6/饱和0.55）x2
+        offerCraftingBowl(consumer, "houttuynia_salad",
                 List.of(IngredientEntry.of(ModItems.HOUTTUYNIA), IngredientEntry.of(fromId("farm_and_charm:tomato")),
                         IngredientEntry.of(ModItems.WILD_GARLIC)),
-                Items.BOWL, ModItems.HOUTTUYNIA_SALAD, 1);
-        // 4. 马齿苋沙拉（饥饿6/饱和0.55）
-        offerPotCooking(consumer, "purslane_mozzarella_salad",
+                ModItems.HOUTTUYNIA_SALAD, 2);
+        // 4. 马齿苋沙拉（饥饿6/饱和0.55）x2
+        offerCraftingBowl(consumer, "purslane_mozzarella_salad",
                 List.of(IngredientEntry.of(ModItems.PURSLANE), IngredientEntry.of(fromId("farm_and_charm:lettuce")),
                         IngredientEntry.of(fromId("candlelight:mozzarella"))),
-                Items.BOWL, ModItems.PURSLANE_MOZZARELLA_SALAD, 1);
+                ModItems.PURSLANE_MOZZARELLA_SALAD, 2);
         // 5. 蕨菜炒培根（饥饿5/饱和0.50）
         offerRoaster(consumer, "bracken_fern_with_bacon",
                 List.of(IngredientEntry.of(ModItems.BRACKEN_FERN_SHOOT), IngredientEntry.of(fromId("farm_and_charm:bacon"))),
@@ -140,11 +140,11 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 List.of(IngredientEntry.of(ModItems.MUGWORT_SPROUT), IngredientEntry.of(fromId("farm_and_charm:kernels")),
                         IngredientEntry.of(fromId("farm_and_charm:butter"))),
                 Items.BOWL, ModItems.MUGWORT_WITH_CORN, 1);
-        // 7. 水芹洋葱沙拉（饥饿6/饱和0.55）
-        offerPotCooking(consumer, "water_dropwort_onion_salad",
+        // 7. 水芹洋葱沙拉（饥饿6/饱和0.55）x2
+        offerCraftingBowl(consumer, "water_dropwort_onion_salad",
                 List.of(IngredientEntry.of(ModItems.WATER_DROPWORT), IngredientEntry.of(fromId("farm_and_charm:onion")),
                         IngredientEntry.of(fromId("candlelight:mozzarella"))),
-                Items.BOWL, ModItems.WATER_DROPWORT_ONION_SALAD, 1);
+                ModItems.WATER_DROPWORT_ONION_SALAD, 2);
         // 8. 蒲公英番茄汤（饥饿6/饱和0.55）
         offerPotCooking(consumer, "dandelion_tomato_egg_soup",
                 List.of(IngredientEntry.of(ModItems.CROP_DANDELION), IngredientEntry.of(fromId("farm_and_charm:tomato")),
@@ -175,22 +175,22 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 List.of(IngredientEntry.of(ModItems.BRACKEN_FERN_SHOOT), IngredientEntry.of(ModItems.MUGWORT_SPROUT),
                         IngredientEntry.of(ModItems.WATER_DROPWORT)),
                 Items.BOWL, ModItems.MIXED_WILD_STIR_FRY, 1);
-        // 13. 凉拌双蔬（饥饿6/饱和0.55）
-        offerPotCooking(consumer, "double_wild_veg_salad",
+        // 13. 凉拌双蔬（饥饿6/饱和0.55）x2
+        offerCraftingBowl(consumer, "double_wild_veg_salad",
                 List.of(IngredientEntry.of(ModItems.HOUTTUYNIA), IngredientEntry.of(ModItems.CROP_DANDELION),
                         IngredientEntry.of(fromId("farm_and_charm:onion"))),
-                Items.BOWL, ModItems.DOUBLE_WILD_VEG_SALAD, 1);
+                ModItems.DOUBLE_WILD_VEG_SALAD, 2);
         // 14. 野菜薄饼（饥饿6/饱和0.55）
         offerStove(consumer, "wild_veg_pancake",
                 List.of(IngredientEntry.of(ModItemTagProvider.WILD_VEGETABLES), IngredientEntry.of(ModItems.WILD_GARLIC),
                         IngredientEntry.of(fromId("farm_and_charm:dough"))),
                 Items.BOWL, ModItems.WILD_VEG_PANCAKE, 3);
-        // 15. 三鲜沙拉（饥饿7/饱和0.60）
-        offerPotCooking(consumer, "three_fresh_salad",
+        // 15. 三鲜沙拉（饥饿7/饱和0.60）x3
+        offerCraftingBowl(consumer, "three_fresh_salad",
                 List.of(IngredientEntry.of(ModItems.PURSLANE), IngredientEntry.of(ModItems.REED_SHOOT),
                         IngredientEntry.of(fromId("farm_and_charm:lettuce")),
                         IngredientEntry.of(fromId("candlelight:mozzarella"))),
-                Items.BOWL, ModItems.THREE_FRESH_SALAD, 2);
+                ModItems.THREE_FRESH_SALAD, 3);
         // 16. 野菜浓汤（饥饿7/饱和0.65）
         offerPotCooking(consumer, "wild_vegetable_soup",
                 List.of(IngredientEntry.of(ModItemTagProvider.WILD_VEGETABLES),
@@ -240,13 +240,11 @@ public class ModRecipesProvider extends FabricRecipeProvider {
         // ⚒️ 合成台 — 无序合成（shapeless）
         // ═══════════════════════════════════════════════════════════════════════════════
 
-        // 23. 冰花水果沙拉（饥饿6/饱和0.55）
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.ICE_FLOWER_FRUIT_SALAD, 1)
-                .input(ModItems.ICE_FLOWERS)
-                .input(fromId("farm_and_charm:lettuce"))
-                .input(ModItemTagProvider.FRUITS)
-                .criterion("has_ice_flowers", conditionsFromItem(ModItems.ICE_FLOWERS))
-                .offerTo(consumer);
+        // 23. 冰花水果沙拉（饥饿6/饱和0.55）x2
+        offerCraftingBowl(consumer, "ice_flower_fruit_salad",
+                List.of(IngredientEntry.of(ModItems.ICE_FLOWERS), IngredientEntry.of(fromId("farm_and_charm:lettuce")),
+                        IngredientEntry.of(ModItemTagProvider.FRUITS)),
+                ModItems.ICE_FLOWER_FRUIT_SALAD, 2);
 
         // ═══════════════════════════════════════════════════════════════════════════════
         // 🌿 新食材料理
@@ -419,6 +417,59 @@ public class ModRecipesProvider extends FabricRecipeProvider {
             @Override
             public RecipeSerializer<?> getSerializer() {
                 return Registries.RECIPE_SERIALIZER.get(new Identifier("farm_and_charm", "stove"));
+            }
+
+            @Override
+            public @Nullable JsonObject toAdvancementJson() {
+                return null;
+            }
+
+            @Override
+            public Identifier getAdvancementId() {
+                return null;
+            }
+        });
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // 搅拌碗 (Crafting Bowl) 配方
+    // 输出到 data/farm_and_charm/recipes/crafting_bowl/   type: farm_and_charm:crafting_bowl
+    // ═══════════════════════════════════════════════════════════════
+    private static void offerCraftingBowl(Consumer<RecipeJsonProvider> consumer, String name,
+                                           List<IngredientEntry> inputs,
+                                           ItemConvertible result, int count) {
+        Identifier recipeId = new Identifier("farm_and_charm", "crafting_bowl/" + name);
+
+        consumer.accept(new RecipeJsonProvider() {
+            @Override
+            public void serialize(JsonObject json) {
+                json.addProperty("type", "farm_and_charm:crafting_bowl");
+
+                JsonArray ingredients = new JsonArray();
+                for (IngredientEntry input : inputs) {
+                    JsonObject obj = new JsonObject();
+                    if (input.isTag())
+                        obj.addProperty("tag", input.id());
+                    else
+                        obj.addProperty("item", input.id());
+                    ingredients.add(obj);
+                }
+                json.add("ingredients", ingredients);
+
+                JsonObject resultObj = new JsonObject();
+                resultObj.addProperty("item", Registries.ITEM.getId(result.asItem()).toString());
+                resultObj.addProperty("count", count);
+                json.add("result", resultObj);
+            }
+
+            @Override
+            public Identifier getRecipeId() {
+                return recipeId;
+            }
+
+            @Override
+            public RecipeSerializer<?> getSerializer() {
+                return Registries.RECIPE_SERIALIZER.get(new Identifier("farm_and_charm", "crafting_bowl"));
             }
 
             @Override

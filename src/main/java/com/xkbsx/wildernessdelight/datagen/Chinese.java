@@ -131,6 +131,16 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("item.minecraft.lingering_potion.effect.fluffy_tail", "滞留型绒尾药水");
         translationBuilder.add("item.minecraft.tipped_arrow.effect.fluffy_tail", "绒尾之箭");
 
+        translationBuilder.add("item.minecraft.potion.effect.long_fluffy_tail", "绒尾药水");
+        translationBuilder.add("item.minecraft.splash_potion.effect.long_fluffy_tail", "喷溅型绒尾药水");
+        translationBuilder.add("item.minecraft.lingering_potion.effect.long_fluffy_tail", "滞留型绒尾药水");
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.long_fluffy_tail", "绒尾之箭");
+
+        translationBuilder.add("item.minecraft.potion.effect.strong_fluffy_tail", "绒尾药水");
+        translationBuilder.add("item.minecraft.splash_potion.effect.strong_fluffy_tail", "喷溅型绒尾药水");
+        translationBuilder.add("item.minecraft.lingering_potion.effect.strong_fluffy_tail", "滞留型绒尾药水");
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.strong_fluffy_tail", "绒尾之箭");
+
         translationBuilder.add("itemGroup.wilderness-delight.wilderness-delight", "原野拾穗");
 
         // ═══════════ 进度 (Advancements) ═══════════
