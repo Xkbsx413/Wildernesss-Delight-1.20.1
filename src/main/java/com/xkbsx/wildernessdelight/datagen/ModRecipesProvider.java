@@ -114,7 +114,8 @@ public class ModRecipesProvider extends FabricRecipeProvider {
 
         // 1. 香椿炒蛋（饥饿5/饱和0.50）
         offerPotCooking(consumer, "chinese_toon_scrambled_eggs",
-                List.of(IngredientEntry.of(ModItems.CHINESE_TOON_SPROUT), IngredientEntry.of(Items.EGG)),
+                List.of(IngredientEntry.of(ModItems.CHINESE_TOON_SPROUT), IngredientEntry.of(Items.EGG),
+                        IngredientEntry.of(ModItems.WILD_GARLIC)),
                 Items.BOWL, ModItems.CHINESE_TOON_SCRAMBLED_EGGS, 2);
         // 2. 荠菜饺子（饥饿6/饱和0.55）
         offerPotCooking(consumer, "shepherd_purse_dumplings",
@@ -133,7 +134,8 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 ModItems.PURSLANE_MOZZARELLA_SALAD, 2);
         // 5. 蕨菜炒培根（饥饿5/饱和0.50）
         offerRoaster(consumer, "bracken_fern_with_bacon",
-                List.of(IngredientEntry.of(ModItems.BRACKEN_FERN_SHOOT), IngredientEntry.of(fromId("farm_and_charm:bacon"))),
+                List.of(IngredientEntry.of(ModItems.BRACKEN_FERN_SHOOT), IngredientEntry.of(fromId("farm_and_charm:bacon")),
+                        IngredientEntry.of(fromId("candlelight:mozzarella")), IngredientEntry.of(ModItems.WILD_GARLIC)),
                 Items.BOWL, ModItems.BRACKEN_FERN_WITH_BACON, 1);
         // 6. 芦蒿玉米粒（饥饿6/饱和0.55）
         offerRoaster(consumer, "mugwort_with_corn",
@@ -145,11 +147,13 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 List.of(IngredientEntry.of(ModItems.WATER_DROPWORT), IngredientEntry.of(fromId("farm_and_charm:onion")),
                         IngredientEntry.of(fromId("candlelight:mozzarella"))),
                 ModItems.WATER_DROPWORT_ONION_SALAD, 2);
-        // 8. 蒲公英番茄汤（饥饿6/饱和0.55）
+        // 8. 蒲公英番茄汤（饥饿7/饱和0.55）
         offerPotCooking(consumer, "dandelion_tomato_egg_soup",
                 List.of(IngredientEntry.of(ModItems.CROP_DANDELION), IngredientEntry.of(fromId("farm_and_charm:tomato")),
-                        IngredientEntry.of(Items.EGG)),
-                Items.BOWL, ModItems.DANDELION_TOMATO_EGG_SOUP, 2);
+                        IngredientEntry.of(fromId("farm_and_charm:tomato")), IngredientEntry.of(Items.EGG),
+                        IngredientEntry.of(ModItemTagProvider.POTIONS),
+                        IngredientEntry.of(fromId("candlelight:mozzarella"))),
+                Items.BOWL, ModItems.DANDELION_TOMATO_EGG_SOUP, 5);
         // 9. 芦苇笋鸡丁（饥饿6/饱和0.55）
         offerRoaster(consumer, "reed_shoot_chicken_lettuce",
                 List.of(IngredientEntry.of(ModItems.REED_SHOOT), IngredientEntry.of(fromId("farm_and_charm:chicken_parts")),
@@ -214,11 +218,13 @@ public class ModRecipesProvider extends FabricRecipeProvider {
 
         // 18. 薄荷茶（饥饿5/饱和0.45）
         offerPotCooking(consumer, "mint_tea",
-                List.of(IngredientEntry.of(ModItems.MINT), IngredientEntry.of(ModItems.MINT)),
+                List.of(IngredientEntry.of(ModItems.MINT), IngredientEntry.of(ModItems.MINT),
+                        IngredientEntry.of(ModItemTagProvider.POTIONS)),
                 Items.GLASS_BOTTLE, ModItems.MINT_TEA, 1);
         // 19. 蒲公英根茶（饥饿4/饱和0.45）
         offerPotCooking(consumer, "dandelion_root_tea",
-                List.of(IngredientEntry.of(ModItems.CROP_DANDELION),IngredientEntry.of(Items.SUGAR)),
+                List.of(IngredientEntry.of(ModItems.CROP_DANDELION),IngredientEntry.of(Items.SUGAR),
+                        IngredientEntry.of(ModItemTagProvider.POTIONS)),
                 Items.GLASS_BOTTLE, ModItems.DANDELION_ROOT_TEA, 1);
         // 20. 寒霜花汤（饥饿4/饱和0.45）
         offerPotCooking(consumer, "ice_flower_mint_soup",
@@ -232,7 +238,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
 
         // 21. 鼠曲草青团（饥饿6/饱和0.55）
         offerStove(consumer, "cudweed_rice_dumpling",
-                List.of(IngredientEntry.of(ModItems.CUDWEED), IngredientEntry.of(Items.WHEAT),
+                List.of(IngredientEntry.of(ModItems.CUDWEED), IngredientEntry.of(fromId("farm_and_charm:dough")),
                         IngredientEntry.of(Items.SUGAR)),
                 Items.BOWL, ModItems.CUDWEED_RICE_DUMPLING, 2);
 
@@ -253,7 +259,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
         // 22. 百草灵膳（饥饿15/饱和0.80）
         offerPotCooking(consumer, "hundred_herbs_delicacy",
                 List.of(IngredientEntry.of(ModItems.GINSENG), IngredientEntry.of(ModItems.LINGZHI),
-                        IngredientEntry.of(ModItems.ICE_FLOWERS), IngredientEntry.of(Items.BAMBOO),
+                        IngredientEntry.of(ModItems.ICE_FLOWERS), IngredientEntry.of(ModItemTagProvider.MEAT),
                         IngredientEntry.of(ModItemTagProvider.WILD_VEGETABLES), IngredientEntry.of(fromId("farm_and_charm:butter"))),
                 Items.BOWL, ModItems.HUNDRED_HERBS_DELICACY, 1);
 

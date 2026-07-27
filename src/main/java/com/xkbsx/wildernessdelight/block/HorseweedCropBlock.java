@@ -43,8 +43,8 @@ import net.minecraft.world.WorldView;
         public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
             if (world.isAir(pos.up())) {
                 int i = 1;
-                // 计算当前这株作物已经长了几格
-                while (world.getBlockState(pos.down(i)).isOf(this)) {
+                int maxScan = Math.min(pos.getY() - world.getBottomY(), 64);
+                while (i <= maxScan && world.getBlockState(pos.down(i)).isOf(this)) {
                     i++;
                 }
                 // 可以修改这里的 3，把它改成你想要的最高高度（比如 4）

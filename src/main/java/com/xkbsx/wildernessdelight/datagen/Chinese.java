@@ -126,6 +126,13 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("effect.wildernesss-delight.body_tempering", "淬体");
         translationBuilder.add("effect.wildernesss-delight.vitality", "元气充盈");
 
+        // farm_and_charm 效果中文名（用于 tooltip）
+        translationBuilder.add("effect.farm_and_charm.rested", "小憩");
+        translationBuilder.add("effect.farm_and_charm.sustenance", "美餐");
+        translationBuilder.add("effect.farm_and_charm.satiation", "饱腹");
+        translationBuilder.add("effect.farm_and_charm.feast", "筵席");
+        translationBuilder.add("effect.farm_and_charm.sweets", "甜点");
+
         translationBuilder.add("item.minecraft.potion.effect.fluffy_tail", "绒尾药水");
         translationBuilder.add("item.minecraft.splash_potion.effect.fluffy_tail", "喷溅型绒尾药水");
         translationBuilder.add("item.minecraft.lingering_potion.effect.fluffy_tail", "滞留型绒尾药水");

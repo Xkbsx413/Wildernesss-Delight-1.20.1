@@ -11,75 +11,131 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item ICE_FLOWERS = registerItems("ice_flowers", new BlockItem(ModBlock.ICE_FLOWERS, new Item.Settings()));//寒霜花
-    //public static final Item POTTED_ICE_FLOWERS = registerItems("potted_ice_flowers", new BlockItem(ModBlock.POTTED_ICE_FLOWERS, new Item.Settings()));
-    public static final Item HORSEWEED = registerItems("horseweed", new AliasedBlockItem(ModBlock.HORSEWEEDBLOCK, new Item.Settings().food(ModFoodComponents.Horseweed)));//飞蓬草
-    public static final Item SHEPHERD_PURSE = registerItems("shepherd_purse", new Item(new Item.Settings().food(ModFoodComponents.Shepherd_purse)));//荠菜
-    public static final Item CROP_DANDELION = registerItems("crop_dandelion", new Item(new Item.Settings().food(ModFoodComponents.Crop_Dandelion)));//蒲公英叶
-    public static final Item HOUTTUYNIA = registerItems("houttuynia", new Item(new Item.Settings().food(ModFoodComponents.Houttuynia)));//折耳根
-    public static final Item BRACKEN_FERN_SHOOT = registerItems("bracken_fern_shoot", new Item(new Item.Settings().food(ModFoodComponents.Bracken_Fern_Shoot)));//蕨菜
-    public static final Item WILD_GARLIC = registerItems("wild_garlic", new Item(new Item.Settings().food(ModFoodComponents.Wild_Garlic)));//野葱
-    public static final Item WATER_DROPWORT = registerItems("water_dropwort", new Item(new Item.Settings().food(ModFoodComponents.Water_Dropwort)));//水芹茎
-    public static final Item PURSLANE = registerItems("purslane", new Item(new Item.Settings().food(ModFoodComponents.Purslane)));//马齿苋
-    public static final Item MUGWORT_SPROUT = registerItems("mugwort_sprout", new Item(new Item.Settings().food(ModFoodComponents.Mugwort_Sprout)));//蒌蒿
-    public static final Item REED_SHOOT = registerItems("reed_shoot", new Item(new Item.Settings().food(ModFoodComponents.Reed_Shoot)));//芦苇笋
-    public static final Item MINT = registerItems("mint", new Item(new Item.Settings().food(ModFoodComponents.Mint)));//薄荷叶
-    public static final Item POISON_HEMLOCK = registerItems("poison_hemlock", new Item(new Item.Settings().food(ModFoodComponents.Poison_Hemlock)));//毒芹
-    public static final Item LYCORIS = registerItems("lycoris", new Item(new Item.Settings().food(ModFoodComponents.Lycoris)));//石蒜
-    public static final Item TREE_OF_HEAVEN = registerItems("tree_of_heaven", new Item(new Item.Settings().food(ModFoodComponents.Tree_of_Heaven)));//臭椿
-    public static final Item BUTTERCUP = registerItems("buttercup", new Item(new Item.Settings().food(ModFoodComponents.Buttercup)));//石龙芮
-    public static final Item CUDWEED = registerItems("cudweed", new Item(new Item.Settings().food(ModFoodComponents.Cudweed)));//鼠曲草
-    public static final Item CHINESE_TOON_SPROUT = registerItems("chinese_toon_sprout", new Item(new Item.Settings().food(ModFoodComponents.Chinese_Toon_Sprout)));//香椿
-    public static final Item COOKED_BRACKEN_FERN_SHOOT = registerItems("cooked_bracken_fern_shoot", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Bracken_Fern_Shoot)));//烤蕨菜
-    public static final Item COOKED_REED_SHOOT = registerItems("cooked_reed_shoot", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Reed_Shoot)));//烤芦苇笋
-    public static final Item COOKED_PURSLANE = registerItems("cooked_purslane", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Purslane)));//烤马齿苋
-    public static final Item COOKED_SHEPHERD_PURSE = registerItems("cooked_shepherd_purse", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Shepherd_Purse)));//烤荠菜
-    public static final Item COOKED_WATER_DROPWORT = registerItems("cooked_water_dropwort", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Water_Dropwort)));//烤水芹
-    public static final Item FOXTAIL_GRASS = registerItems("foxtail_grass", new BlockItem(ModBlock.FOXTAIL_GRASS, new Item.Settings()));//狗尾巴草
-    public static final Item GINSENG = registerItems("ginseng", new Item(new Item.Settings().food(ModFoodComponents.Ginseng)));//人参
-    public static final Item LINGZHI = registerItems("lingzhi", new Item(new Item.Settings().food(ModFoodComponents.Lingzhi)));//灵芝
-    public static final Item HERICIUM = registerItems("hericium", new Item(new Item.Settings().food(ModFoodComponents.Hericium)));//猴头菇
-    public static final Item GINSENG_SOUP = registerItems("ginseng_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Ginseng_Soup), false));//人参汤
-    public static final Item HERICIUM_COOKIE = registerItems("hericium_cookie", new Item(new Item.Settings().food(ModFoodComponents.Hericium_Cookie)));//猴头菇饼干
-    public static final Item LINGZHI_CHICKEN_SOUP = registerItems("lingzhi_chicken_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Lingzhi_Chicken_Soup), false));//灵芝鸡汤
-    public static final Item DANDELION_CLOCK = registerItems("dandelion_clock", new DandelionClockItem(new Item.Settings()));//蒲公英毛球
+    // 植物/生食材
+    public static Item ICE_FLOWERS;//寒霜花
+    public static Item HORSEWEED;//飞蓬草
+    public static Item SHEPHERD_PURSE;//荠菜
+    public static Item CROP_DANDELION;//蒲公英
+    public static Item HOUTTUYNIA;//折耳根
+    public static Item BRACKEN_FERN_SHOOT;//蕨菜
+    public static Item WILD_GARLIC;//野葱
+    public static Item WATER_DROPWORT;//水芹
+    public static Item PURSLANE;//马齿苋
+    public static Item MUGWORT_SPROUT;//芦蒿
+    public static Item REED_SHOOT;//芦苇笋
+    public static Item MINT;//薄荷
+    public static Item POISON_HEMLOCK;//毒芹
+    public static Item LYCORIS;//石蒜
+    public static Item TREE_OF_HEAVEN;//臭椿
+    public static Item BUTTERCUP;//石龙芮
+    public static Item CUDWEED;//鼠曲草
+    public static Item CHINESE_TOON_SPROUT;//香椿
+    public static Item COOKED_BRACKEN_FERN_SHOOT;//烤蕨菜
+    public static Item COOKED_REED_SHOOT;//烤芦苇笋
+    public static Item COOKED_PURSLANE;//烤马齿苋
+    public static Item COOKED_SHEPHERD_PURSE;//烤荠菜
+    public static Item COOKED_WATER_DROPWORT;//烤水芹
+    public static Item FOXTAIL_GRASS;//狗尾巴草
+    public static Item GINSENG;//人参
+    public static Item LINGZHI;//灵芝
+    public static Item HERICIUM;//猴头菇
+    public static Item GINSENG_SOUP;//人参汤
+    public static Item HERICIUM_COOKIE;//猴头菇饼干
+    public static Item LINGZHI_CHICKEN_SOUP;//灵芝鸡汤
+    public static Item DANDELION_CLOCK;//蒲公英毛球
 
-    // ═══════════ 🥘 锅料理 ═══════════
-    public static final Item CHINESE_TOON_SCRAMBLED_EGGS = registerItems("chinese_toon_scrambled_eggs", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Chinese_Toon_Scrambled_Eggs), false));//香椿炒蛋
-    public static final Item SHEPHERD_PURSE_DUMPLINGS = registerItems("shepherd_purse_dumplings", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Shepherd_Purse_Dumplings), false));//荠菜饺子
-    public static final Item HOUTTUYNIA_SALAD = registerItems("houttuynia_salad", new Item(new Item.Settings().food(ModFoodComponents.Houttuynia_Salad)));//凉拌折耳根
-    public static final Item PURSLANE_MOZZARELLA_SALAD = registerItems("purslane_mozzarella_salad", new Item(new Item.Settings().food(ModFoodComponents.Purslane_Mozzarella_Salad)));//马齿苋沙拉
-    public static final Item BRACKEN_FERN_WITH_BACON = registerItems("bracken_fern_with_bacon", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Bracken_Fern_With_Bacon), false));//蕨菜炒培根
-    public static final Item MUGWORT_WITH_CORN = registerItems("mugwort_with_corn", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Mugwort_With_Corn), false));//芦蒿玉米粒
-    public static final Item WATER_DROPWORT_ONION_SALAD = registerItems("water_dropwort_onion_salad", new Item(new Item.Settings().food(ModFoodComponents.Water_Dropwort_Onion_Salad)));//水芹洋葱沙拉
-    public static final Item DANDELION_TOMATO_EGG_SOUP = registerItems("dandelion_tomato_egg_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Dandelion_Tomato_Egg_Soup), false));//蒲公英番茄汤
-    public static final Item REED_SHOOT_CHICKEN_LETTUCE = registerItems("reed_shoot_chicken_lettuce", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Reed_Shoot_Chicken_Lettuce), false));//芦苇笋鸡丁
-    public static final Item WILD_GARLIC_CORN_PANCAKE = registerItems("wild_garlic_corn_pancake", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Wild_Garlic_Corn_Pancake), false));//野葱玉米烙
-    public static final Item HORSEWEED_MOZZARELLA_HONEY = registerItems("horseweed_mozzarella_honey", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Horseweed_Mozzarella_Honey), false));//飞蓬芝士焗
-    public static final Item MIXED_WILD_STIR_FRY = registerItems("mixed_wild_stir_fry", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Mixed_Wild_Stir_Fry), false));//山野炒时蔬
-    public static final Item DOUBLE_WILD_VEG_SALAD = registerItems("double_wild_veg_salad", new Item(new Item.Settings().food(ModFoodComponents.Double_Wild_Veg_Salad)));//凉拌双蔬
-    public static final Item WILD_VEG_PANCAKE = registerItems("wild_veg_pancake", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Wild_Veg_Pancake), false));//野菜薄饼
-    public static final Item THREE_FRESH_SALAD = registerItems("three_fresh_salad", new Item(new Item.Settings().food(ModFoodComponents.Three_Fresh_Salad)));//三鲜沙拉
-    public static final Item WILD_VEGETABLE_SOUP = registerItems("wild_vegetable_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Wild_Vegetable_Soup), false));//野菜浓汤
-    // ═══════════ 🔥 烤炉料理 ═══════════//锅炉==烤炉
-    public static final Item MINT_LAMB_HAM = registerItems("mint_lamb_ham", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Mint_Lamb_Ham), false));//薄荷羊肉
-    // ═══════════ ⚒️ 合成台料理 ═══════════
-    public static final Item ICE_FLOWER_FRUIT_SALAD = registerItems("ice_flower_fruit_salad", new Item(new Item.Settings().food(ModFoodComponents.Ice_Flower_Fruit_Salad)));//寒霜花水果沙拉
-    // ═══════════ 🧃 饮品 ═══════════
-    public static final Item MINT_TEA = registerItems("mint_tea", new ContainerFoodItem(Items.GLASS_BOTTLE, new Item.Settings().food(ModFoodComponents.Mint_Tea), true));//薄荷茶
-    public static final Item DANDELION_ROOT_TEA = registerItems("dandelion_root_tea", new ContainerFoodItem(Items.GLASS_BOTTLE, new Item.Settings().food(ModFoodComponents.Dandelion_Root_Tea), true));//蒲公英根茶
-    public static final Item ICE_FLOWER_MINT_SOUP = registerItems("ice_flower_mint_soup", new ContainerFoodItem(Items.GLASS_BOTTLE, new Item.Settings().food(ModFoodComponents.Ice_Flower_Mint_Soup), true));//寒霜花汤
-    // ═══════════ 🍡 甜点 ═══════════
-    public static final Item CUDWEED_RICE_DUMPLING = registerItems("cudweed_rice_dumpling", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Cudweed_Rice_Dumpling), false));//鼠曲草青团
-    public static final Item HUNDRED_HERBS_DELICACY = registerItems("hundred_herbs_delicacy", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Hundred_Herbs_Delicacy), false));//百草灵膳
+    // 锅料理
+    public static Item CHINESE_TOON_SCRAMBLED_EGGS;//香椿炒蛋
+    public static Item SHEPHERD_PURSE_DUMPLINGS;//荠菜饺子
+    public static Item HOUTTUYNIA_SALAD;//凉拌折耳根
+    public static Item PURSLANE_MOZZARELLA_SALAD;//马齿苋沙拉
+    public static Item BRACKEN_FERN_WITH_BACON;//蕨菜炒培根
+    public static Item MUGWORT_WITH_CORN;//芦蒿玉米粒
+    public static Item WATER_DROPWORT_ONION_SALAD;//水芹洋葱沙拉
+    public static Item DANDELION_TOMATO_EGG_SOUP;//蒲公英番茄汤
+    public static Item REED_SHOOT_CHICKEN_LETTUCE;//芦苇笋鸡丁
+    public static Item WILD_GARLIC_CORN_PANCAKE;//野葱玉米烙
+    public static Item HORSEWEED_MOZZARELLA_HONEY;//飞蓬芝士焗
+    public static Item MIXED_WILD_STIR_FRY;//山野炒时蔬
+    public static Item DOUBLE_WILD_VEG_SALAD;//凉拌双蔬
+    public static Item WILD_VEG_PANCAKE;//野菜薄饼
+    public static Item THREE_FRESH_SALAD;//三鲜沙拉
+    public static Item WILD_VEGETABLE_SOUP;//野菜浓汤
+    public static Item MINT_LAMB_HAM;//薄荷羊肉
+    public static Item ICE_FLOWER_FRUIT_SALAD;//冰花水果沙拉
 
-    public static Item registerItems(String id, Item item) {
+    // 饮品 & 甜点
+    public static Item MINT_TEA;//薄荷茶
+    public static Item DANDELION_ROOT_TEA;//蒲公英根茶
+    public static Item ICE_FLOWER_MINT_SOUP;//寒霜花汤
+    public static Item CUDWEED_RICE_DUMPLING;//鼠曲草青团
+    public static Item HUNDRED_HERBS_DELICACY;//百草灵膳
+
+    public static void registerItems() {
+        ModFoodComponents.init();
+
+        ICE_FLOWERS = register("ice_flowers", new BlockItem(ModBlock.ICE_FLOWERS, new Item.Settings()));
+        HORSEWEED = register("horseweed", new AliasedBlockItem(ModBlock.HORSEWEEDBLOCK, new Item.Settings().food(ModFoodComponents.Horseweed)));
+        SHEPHERD_PURSE = register("shepherd_purse", new Item(new Item.Settings().food(ModFoodComponents.Shepherd_purse)));
+        CROP_DANDELION = register("crop_dandelion", new Item(new Item.Settings().food(ModFoodComponents.Crop_Dandelion)));
+        HOUTTUYNIA = register("houttuynia", new Item(new Item.Settings().food(ModFoodComponents.Houttuynia)));
+        BRACKEN_FERN_SHOOT = register("bracken_fern_shoot", new Item(new Item.Settings().food(ModFoodComponents.Bracken_Fern_Shoot)));
+        WILD_GARLIC = register("wild_garlic", new Item(new Item.Settings().food(ModFoodComponents.Wild_Garlic)));
+        WATER_DROPWORT = register("water_dropwort", new Item(new Item.Settings().food(ModFoodComponents.Water_Dropwort)));
+        PURSLANE = register("purslane", new Item(new Item.Settings().food(ModFoodComponents.Purslane)));
+        MUGWORT_SPROUT = register("mugwort_sprout", new Item(new Item.Settings().food(ModFoodComponents.Mugwort_Sprout)));
+        REED_SHOOT = register("reed_shoot", new Item(new Item.Settings().food(ModFoodComponents.Reed_Shoot)));
+        MINT = register("mint", new Item(new Item.Settings().food(ModFoodComponents.Mint)));
+        CHINESE_TOON_SPROUT = register("chinese_toon_sprout", new Item(new Item.Settings().food(ModFoodComponents.Chinese_Toon_Sprout)));
+        POISON_HEMLOCK = register("poison_hemlock", new Item(new Item.Settings().food(ModFoodComponents.Poison_Hemlock)));
+        LYCORIS = register("lycoris", new Item(new Item.Settings().food(ModFoodComponents.Lycoris)));
+        TREE_OF_HEAVEN = register("tree_of_heaven", new Item(new Item.Settings().food(ModFoodComponents.Tree_of_Heaven)));
+        BUTTERCUP = register("buttercup", new Item(new Item.Settings().food(ModFoodComponents.Buttercup)));
+        CUDWEED = register("cudweed", new Item(new Item.Settings().food(ModFoodComponents.Cudweed)));
+        GINSENG = register("ginseng", new FoodEffectItem(new Item.Settings().food(ModFoodComponents.Ginseng)));
+        LINGZHI = register("lingzhi", new FoodEffectItem(new Item.Settings().food(ModFoodComponents.Lingzhi)));
+        HERICIUM = register("hericium", new Item(new Item.Settings().food(ModFoodComponents.Hericium)));
+        COOKED_BRACKEN_FERN_SHOOT = register("cooked_bracken_fern_shoot", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Bracken_Fern_Shoot)));
+        COOKED_REED_SHOOT = register("cooked_reed_shoot", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Reed_Shoot)));
+        COOKED_PURSLANE = register("cooked_purslane", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Purslane)));
+        COOKED_SHEPHERD_PURSE = register("cooked_shepherd_purse", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Shepherd_Purse)));
+        COOKED_WATER_DROPWORT = register("cooked_water_dropwort", new Item(new Item.Settings().food(ModFoodComponents.Cooked_Water_Dropwort)));
+        FOXTAIL_GRASS = register("foxtail_grass", new BlockItem(ModBlock.FOXTAIL_GRASS, new Item.Settings()));
+        DANDELION_CLOCK = register("dandelion_clock", new DandelionClockItem(new Item.Settings()));
+        GINSENG_SOUP = register("ginseng_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Ginseng_Soup), false));
+        HERICIUM_COOKIE = register("hericium_cookie", new FoodEffectItem(new Item.Settings().food(ModFoodComponents.Hericium_Cookie)));
+        LINGZHI_CHICKEN_SOUP = register("lingzhi_chicken_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Lingzhi_Chicken_Soup), false));
+
+        CHINESE_TOON_SCRAMBLED_EGGS = register("chinese_toon_scrambled_eggs", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Chinese_Toon_Scrambled_Eggs), false));
+        SHEPHERD_PURSE_DUMPLINGS = register("shepherd_purse_dumplings", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Shepherd_Purse_Dumplings), false));
+        HOUTTUYNIA_SALAD = register("houttuynia_salad", new FoodEffectItem(new Item.Settings().food(ModFoodComponents.Houttuynia_Salad)));
+        PURSLANE_MOZZARELLA_SALAD = register("purslane_mozzarella_salad", new FoodEffectItem(new Item.Settings().food(ModFoodComponents.Purslane_Mozzarella_Salad)));
+        BRACKEN_FERN_WITH_BACON = register("bracken_fern_with_bacon", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Bracken_Fern_With_Bacon), false));
+        MUGWORT_WITH_CORN = register("mugwort_with_corn", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Mugwort_With_Corn), false));
+        WATER_DROPWORT_ONION_SALAD = register("water_dropwort_onion_salad", new FoodEffectItem(new Item.Settings().food(ModFoodComponents.Water_Dropwort_Onion_Salad)));
+        DANDELION_TOMATO_EGG_SOUP = register("dandelion_tomato_egg_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Dandelion_Tomato_Egg_Soup), false));
+        REED_SHOOT_CHICKEN_LETTUCE = register("reed_shoot_chicken_lettuce", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Reed_Shoot_Chicken_Lettuce), false));
+        WILD_GARLIC_CORN_PANCAKE = register("wild_garlic_corn_pancake", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Wild_Garlic_Corn_Pancake), false));
+        HORSEWEED_MOZZARELLA_HONEY = register("horseweed_mozzarella_honey", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Horseweed_Mozzarella_Honey), false));
+        MIXED_WILD_STIR_FRY = register("mixed_wild_stir_fry", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Mixed_Wild_Stir_Fry), false));
+        DOUBLE_WILD_VEG_SALAD = register("double_wild_veg_salad", new FoodEffectItem(new Item.Settings().food(ModFoodComponents.Double_Wild_Veg_Salad)));
+        WILD_VEG_PANCAKE = register("wild_veg_pancake", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Wild_Veg_Pancake), false));
+        THREE_FRESH_SALAD = register("three_fresh_salad", new FoodEffectItem(new Item.Settings().food(ModFoodComponents.Three_Fresh_Salad)));
+        WILD_VEGETABLE_SOUP = register("wild_vegetable_soup", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Wild_Vegetable_Soup), false));
+        MINT_LAMB_HAM = register("mint_lamb_ham", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Mint_Lamb_Ham), false));
+        ICE_FLOWER_FRUIT_SALAD = register("ice_flower_fruit_salad", new FoodEffectItem(new Item.Settings().food(ModFoodComponents.Ice_Flower_Fruit_Salad)));
+
+        MINT_TEA = register("mint_tea", new ContainerFoodItem(Items.GLASS_BOTTLE, new Item.Settings().food(ModFoodComponents.Mint_Tea), true));
+        DANDELION_ROOT_TEA = register("dandelion_root_tea", new ContainerFoodItem(Items.GLASS_BOTTLE, new Item.Settings().food(ModFoodComponents.Dandelion_Root_Tea), true));
+        ICE_FLOWER_MINT_SOUP = register("ice_flower_mint_soup", new ContainerFoodItem(Items.GLASS_BOTTLE, new Item.Settings().food(ModFoodComponents.Ice_Flower_Mint_Soup), true));
+        CUDWEED_RICE_DUMPLING = register("cudweed_rice_dumpling", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Cudweed_Rice_Dumpling), false));
+        HUNDRED_HERBS_DELICACY = register("hundred_herbs_delicacy", new ContainerFoodItem(Items.BOWL, new Item.Settings().food(ModFoodComponents.Hundred_Herbs_Delicacy), false));
+    }
+
+    private static Item register(String id, Item item) {
         if (item instanceof BlockItem) {
             ((BlockItem)item).appendBlocks(Item.BLOCK_ITEMS, item);
         }
         return Registry.register(Registries.ITEM, new Identifier(WildernesssDelight.MOD_ID, id), item);
-    }
-
-    public static void registerItems() {
     }
 }

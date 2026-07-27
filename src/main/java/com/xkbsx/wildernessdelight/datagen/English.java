@@ -126,6 +126,13 @@ public class English extends FabricLanguageProvider {
             translationBuilder.add("effect.wildernesss-delight.body_tempering","Body Tempering");
             translationBuilder.add("effect.wildernesss-delight.vitality","Vitality");
 
+            // farm_and_charm effect names for tooltip
+            translationBuilder.add("effect.farm_and_charm.rested","Rested");
+            translationBuilder.add("effect.farm_and_charm.sustenance","Sustenance");
+            translationBuilder.add("effect.farm_and_charm.satiation","Satiation");
+            translationBuilder.add("effect.farm_and_charm.feast","Feast");
+            translationBuilder.add("effect.farm_and_charm.sweets","Sweets");
+
             translationBuilder.add("item.minecraft.potion.effect.fluffy_tail","Potion of Fluffy Tail");
             translationBuilder.add("item.minecraft.splash_potion.effect.fluffy_tail","Splash Potion of Fluffy Tail");
             translationBuilder.add("item.minecraft.lingering_potion.effect.fluffy_tail","Lingering Potion of Fluffy Tail");

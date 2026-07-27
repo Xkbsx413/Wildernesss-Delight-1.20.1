@@ -43,26 +43,26 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREE_OF_HEAVEN_NORMAL_TREE = of("tree_of_heaven_normal_tree");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
-        register(featureRegisterable, ICE_FLOWERS_COVERED, ModBlock.ICE_FLOWERS, 7);
-        register(featureRegisterable, HORSEWEED_COVERED, ModBlock.HORSEWEEDBLOCK, 5);
-        register(featureRegisterable, SHEPHERD_PURSE_COVERED, ModBlock.SHEPHERD_PURSE, 7);
-        register(featureRegisterable, CROP_DANDELION_COVERED, ModBlock.CROP_DANDELION, 9);
-        register(featureRegisterable, HOUTTUYNIA_COVERED, ModBlock.HOUTTUYNIA, 8);
-        register(featureRegisterable, BRACKEN_FERN_SHOOT_COVERED, ModBlock.BRACKEN_FERN_SHOOT, 7);
-        register(featureRegisterable, WILD_GARLIC_COVERED, ModBlock.WILD_GARLIC, 8);
-        register(featureRegisterable, WATER_DROPWORT_COVERED, ModBlock.WATER_DROPWORT, 7);
-        register(featureRegisterable, PURSLANE_COVERED, ModBlock.PURSLANE, 5);
-        register(featureRegisterable, MUGWORT_SPROUT_COVERED, ModBlock.MUGWORT_SPROUT, 7);
-        register(featureRegisterable, REED_SHOOT_COVERED, ModBlock.REED_SHOOT, 8);
-        register(featureRegisterable, POISON_HEMLOCK_COVERED, ModBlock.POISON_HEMLOCK, 5);
-        register(featureRegisterable, MINT_COVERED, ModBlock.MINT, 7);
-        register(featureRegisterable, LYCORIS_COVERED, ModBlock.LYCORIS, 5);
-        register(featureRegisterable, BUTTERCUP_COVERED, ModBlock.BUTTERCUP, 9);
-        register(featureRegisterable, CUDWEED_COVERED, ModBlock.CUDWEED, 7);
-        register(featureRegisterable, FOXTAIL_GRASS_COVERED, ModBlock.FOXTAIL_GRASS, 7);
-        register(featureRegisterable, GINSENG_COVERED, ModBlock.GINSENG, 6);
-        register(featureRegisterable, LINGZHI_COVERED, ModBlock.LINGZHI, 6);
-        register(featureRegisterable, HERICIUM_COVERED, ModBlock.HERICIUM, 7);
+        register(featureRegisterable, ICE_FLOWERS_COVERED, ModBlock.ICE_FLOWERS, 8);
+        register(featureRegisterable, HORSEWEED_COVERED, ModBlock.HORSEWEEDBLOCK, 6);
+        register(featureRegisterable, SHEPHERD_PURSE_COVERED, ModBlock.SHEPHERD_PURSE, 8);
+        register(featureRegisterable, CROP_DANDELION_COVERED, ModBlock.CROP_DANDELION, 10);
+        register(featureRegisterable, HOUTTUYNIA_COVERED, ModBlock.HOUTTUYNIA, 9);
+        register(featureRegisterable, BRACKEN_FERN_SHOOT_COVERED, ModBlock.BRACKEN_FERN_SHOOT, 8);
+        register(featureRegisterable, WILD_GARLIC_COVERED, ModBlock.WILD_GARLIC, 9);
+        register(featureRegisterable, WATER_DROPWORT_COVERED, ModBlock.WATER_DROPWORT, 8);
+        register(featureRegisterable, PURSLANE_COVERED, ModBlock.PURSLANE, 6);
+        register(featureRegisterable, MUGWORT_SPROUT_COVERED, ModBlock.MUGWORT_SPROUT, 8);
+        register(featureRegisterable, REED_SHOOT_COVERED, ModBlock.REED_SHOOT, 9);
+        register(featureRegisterable, POISON_HEMLOCK_COVERED, ModBlock.POISON_HEMLOCK, 6);
+        register(featureRegisterable, MINT_COVERED, ModBlock.MINT, 8);
+        register(featureRegisterable, LYCORIS_COVERED, ModBlock.LYCORIS, 6);
+        register(featureRegisterable, BUTTERCUP_COVERED, ModBlock.BUTTERCUP, 10);
+        register(featureRegisterable, CUDWEED_COVERED, ModBlock.CUDWEED, 8);
+        register(featureRegisterable, FOXTAIL_GRASS_COVERED, ModBlock.FOXTAIL_GRASS, 8);
+        register(featureRegisterable, GINSENG_COVERED, ModBlock.GINSENG, 7);
+        register(featureRegisterable, LINGZHI_COVERED, ModBlock.LINGZHI, 7);
+        register(featureRegisterable, HERICIUM_COVERED, ModBlock.HERICIUM, 8);
 
         ConfiguredFeatures.register(featureRegisterable, CHINESE_TOON_SMALL_TREE, Feature.TREE,
                 new TreeFeatureConfig.Builder(

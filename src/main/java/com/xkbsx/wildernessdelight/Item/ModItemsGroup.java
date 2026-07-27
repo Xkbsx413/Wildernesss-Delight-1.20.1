@@ -35,6 +35,7 @@ public class ModItemsGroup {
                 entries.add(ModBlock.GINSENG_ITEM);
                 entries.add(ModBlock.LINGZHI_ITEM);
                 entries.add(ModBlock.HERICIUM_ITEM);
+                entries.add(ModItems.FOXTAIL_GRASS);
                 entries.add(ModBlock.CHINESE_TOON_SAPLING_ITEM);
                 entries.add(ModBlock.TREE_OF_HEAVEN_SAPLING_ITEM);
                 entries.add(ModItems.ICE_FLOWERS);
@@ -55,7 +56,6 @@ public class ModItemsGroup {
                 entries.add(ModItems.TREE_OF_HEAVEN);
                 entries.add(ModItems.BUTTERCUP);
                 entries.add(ModItems.CUDWEED);
-                entries.add(ModItems.FOXTAIL_GRASS);
                 entries.add(ModItems.GINSENG);
                 entries.add(ModItems.LINGZHI);
                 entries.add(ModItems.HERICIUM);

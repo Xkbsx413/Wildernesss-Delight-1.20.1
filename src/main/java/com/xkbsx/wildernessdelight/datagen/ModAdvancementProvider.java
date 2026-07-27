@@ -180,6 +180,17 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                                 .items(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION)
                                 .potion(ModPotions.FLUFFY_TAIL)
                                 .build()))
+                .criterion("fluffy_tail_long", InventoryChangedCriterion.Conditions.items(
+                        ItemPredicate.Builder.create()
+                                .items(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION)
+                                .potion(ModPotions.FLUFFY_TAIL_LONG)
+                                .build()))
+                .criterion("fluffy_tail_strong", InventoryChangedCriterion.Conditions.items(
+                        ItemPredicate.Builder.create()
+                                .items(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION)
+                                .potion(ModPotions.FLUFFY_TAIL_STRONG)
+                                .build()))
+                .requirements(new String[][]{{"fluffy_tail", "fluffy_tail_long", "fluffy_tail_strong"}})
                 .build(exporter, "wildernesss-delight:grass_wolf_trail");
     }
 }
