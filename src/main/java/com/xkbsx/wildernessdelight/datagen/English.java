@@ -173,9 +173,7 @@ public class English extends FabricLanguageProvider {
             translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.title", "§eGrass Lures Wolf");
             translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.desc", "§eObtain the Fluffy Tail effect and let wolves follow your trail");
 
-        translationBuilder.add(ModBlock.WILDERNESS_BANNER, "Wilderness Wall Banner");
-        translationBuilder.add("item.wildernesss-delight.wilderness_banner", "Wilderness Banner");
-        translationBuilder.add(ModBlock.WILDERNESS_BANNER_STANDING, "Wilderness Banner");
+        translationBuilder.add(ModBlock.WILDERNESS_BANNER, "Wilderness Banner");
         translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line1", "Reward for completing all dishes");
         translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line2", "When placed:");
         translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line3", "Grants Speed effect within 8 blocks");

@@ -101,6 +101,7 @@ java {
 
 tasks.named('sourcesJar') {
 	dependsOn tasks.named('runDatagen')
+	duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
 
 	sourceCompatibility = JavaVersion.VERSION_17

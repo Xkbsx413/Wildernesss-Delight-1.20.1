@@ -283,9 +283,9 @@ public class ModRecipesProvider extends FabricRecipeProvider {
         // 原野旗帜 × 1 + 下界合金升级模板 + 下界合金锭 → 原野旗帜 × 2
         offerSmithingTransform(consumer, "wilderness_banner_smithing",
                 Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
-                ModBlock.WILDERNESS_BANNER_ITEM,
+                ModBlock.WILDERNESS_BANNER,
                 Items.NETHERITE_INGOT,
-                ModBlock.WILDERNESS_BANNER_ITEM, 2);
+                ModBlock.WILDERNESS_BANNER, 2);
     }
 
     // ═══════════════════════════════════════════════════════════════
