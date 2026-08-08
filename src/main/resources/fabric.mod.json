@@ -5,7 +5,7 @@
 	"name": "Wilderness's Delight",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"Xkbsx"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -21,6 +21,9 @@
 		"client": [
 			"com.xkbsx.wildernessdelight.WildernesssDelightClient"
 		],
+		"terrablender": [
+			"com.xkbsx.wildernessdelight.world.biome.ModTerraBlenderAPI"
+		],
 		"fabric-datagen": [
 			"com.xkbsx.wildernessdelight.WildernesssDelightDataGenerator"
 		]
@@ -32,6 +35,7 @@
 		"fabricloader": ">=0.19.2",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"terrablender": ">=3.0.0"
 	}
 }

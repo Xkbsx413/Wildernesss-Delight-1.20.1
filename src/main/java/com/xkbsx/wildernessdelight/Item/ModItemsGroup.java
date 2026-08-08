@@ -35,6 +35,7 @@ public class ModItemsGroup {
                 entries.add(ModBlock.GINSENG_ITEM);
                 entries.add(ModBlock.LINGZHI_ITEM);
                 entries.add(ModBlock.HERICIUM_ITEM);
+                entries.add(ModBlock.FIREFLY_BRIAR_ITEM);
                 entries.add(ModItems.FOXTAIL_GRASS);
                 entries.add(ModBlock.CHINESE_TOON_SAPLING_ITEM);
                 entries.add(ModBlock.TREE_OF_HEAVEN_SAPLING_ITEM);

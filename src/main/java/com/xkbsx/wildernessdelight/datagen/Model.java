@@ -49,6 +49,7 @@ public class Model extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModBlock.GINSENG, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.LINGZHI, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModBlock.HERICIUM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlock.FIREFLY_BRIAR, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlock.CHINESE_TOON_LEAVES);
         blockStateModelGenerator.registerTintableCross(ModBlock.CHINESE_TOON_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlock.TREE_OF_HEAVEN_LEAVES);

@@ -38,6 +38,7 @@ dependencies {
 	//	exclude(group: "net.fabricmc")//农夫乐事 重织的依赖
 	//}
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
+	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
 
 	// Let's Do 系列前置
 	implementation "blue.endless:jankson:1.2.1"

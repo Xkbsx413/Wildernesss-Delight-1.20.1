@@ -2,6 +2,7 @@ package com.xkbsx.wildernessdelight;
 
 import com.xkbsx.wildernessdelight.datagen.*;
 import com.xkbsx.wildernessdelight.datagen.ModItemTagProvider;
+import com.xkbsx.wildernessdelight.world.biome.Modbiomes;
 import com.xkbsx.wildernessdelight.world.tree.ModConfiguredFeatures;
 import com.xkbsx.wildernessdelight.world.tree.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -28,5 +29,6 @@ public class WildernesssDelightDataGenerator implements DataGeneratorEntrypoint 
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, Modbiomes::bootstrap);
 	}
 }

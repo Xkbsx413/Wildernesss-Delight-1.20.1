@@ -67,6 +67,8 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add(ModBlock.HERICIUM,"野生猴头菇");
         translationBuilder.add("item.wildernesss-delight.hericium_block","猴头菇");
         translationBuilder.add("item.wildernesss-delight.hericium","猴头菇");
+        translationBuilder.add(ModBlock.FIREFLY_BRIAR,"萤息灌木");
+        translationBuilder.add("item.wildernesss-delight.firefly_briar_block","萤息灌木");
         translationBuilder.add("item.wildernesss-delight.cudweed","鼠曲草");
         translationBuilder.add(ModBlock.ICE_FLOWERS,"寒霜花");
         translationBuilder.add("item.wildernesss-delight.ice_flowers","寒霜花");

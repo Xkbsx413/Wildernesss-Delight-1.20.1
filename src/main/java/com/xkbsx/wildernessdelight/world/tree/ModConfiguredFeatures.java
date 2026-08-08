@@ -37,6 +37,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> GINSENG_COVERED = of("ginseng_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> LINGZHI_COVERED = of("lingzhi_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> HERICIUM_COVERED = of("hericium_covered");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FIREFLY_BRIAR_COVERED = of("firefly_briar_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHINESE_TOON_SMALL_TREE = of("chinese_toon_small_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHINESE_TOON_NORMAL_TREE = of("chinese_toon_normal_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREE_OF_HEAVEN_SMALL_TREE = of("tree_of_heaven_small_tree");
@@ -63,6 +64,8 @@ public class ModConfiguredFeatures {
         register(featureRegisterable, GINSENG_COVERED, ModBlock.GINSENG, 7);
         register(featureRegisterable, LINGZHI_COVERED, ModBlock.LINGZHI, 7);
         register(featureRegisterable, HERICIUM_COVERED, ModBlock.HERICIUM, 8);
+        // 萤息灌木：tries=20，一簇内植株比其他植物(6-10)更密
+        register(featureRegisterable, FIREFLY_BRIAR_COVERED, ModBlock.FIREFLY_BRIAR, 20);
 
         ConfiguredFeatures.register(featureRegisterable, CHINESE_TOON_SMALL_TREE, Feature.TREE,
                 new TreeFeatureConfig.Builder(

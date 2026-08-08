@@ -67,6 +67,8 @@ public class English extends FabricLanguageProvider {
             translationBuilder.add(ModBlock.HERICIUM,"wild hericium");
             translationBuilder.add("item.wildernesss-delight.hericium_block","hericium");
             translationBuilder.add("item.wildernesss-delight.hericium","hericium");
+            translationBuilder.add(ModBlock.FIREFLY_BRIAR,"firefly briar");
+            translationBuilder.add("item.wildernesss-delight.firefly_briar_block","firefly briar");
             translationBuilder.add("item.wildernesss-delight.cudweed","cudweed leaves");
            translationBuilder.add(ModBlock.ICE_FLOWERS,"ice flowers");
            translationBuilder.add("item.wildernesss-delight.ice_flowers","ice flowers");
