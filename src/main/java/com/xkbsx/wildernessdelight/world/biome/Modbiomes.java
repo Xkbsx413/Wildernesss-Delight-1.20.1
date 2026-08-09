@@ -33,6 +33,14 @@ public class Modbiomes {
             new Identifier(WildernesssDelight.MOD_ID, "firefly_meadow"));
 
     /**
+     * 繁茂草甸 (Lush Meadow)：
+     * 基于原版草甸（meadow）改造而来的「繁茂」版本——保留草甸的高草/繁花/稀疏树木，
+     * 额外撒上原版矮草并铺满模组野菜，整体比原版草甸更加郁郁葱葱。
+     */
+    public static final RegistryKey<Biome> LUSH_MEADOW = RegistryKey.of(RegistryKeys.BIOME,
+            new Identifier(WildernesssDelight.MOD_ID, "lush_meadow"));
+
+    /**
      * datagen 引导入口：在 buildRegistry 阶段被 Fabric API 调用，
      * 通过 Registerable 把上面定义好的群系对象注册进动态注册表。
      */
@@ -96,7 +104,7 @@ public class Modbiomes {
         addFeature(generationSettings, GenerationStep.Feature.VEGETAL_DECORATION,
                 "minecraft:trees_plains",                // 草原树的零散树木
                 "minecraft:flower_plains",              // 野花
-                "minecraft:patch_grass_plain",          // 普通草
+                // 原版低矮草（patch_grass_plain）已被萤息灌木（firefly_briar_covered_grass）完全取代，不再生成
                 "minecraft:brown_mushroom_normal",      // 棕蘑菇
                 "minecraft:red_mushroom_normal",        // 红蘑菇
                 "minecraft:patch_sugar_cane",           // 甘蔗
@@ -105,7 +113,7 @@ public class Modbiomes {
                 "wildernesss-delight:crop_dandelion_covered_land", // 蒲公英
                 "wildernesss-delight:cudweed_covered_land",      // 鼠曲草
                 "wildernesss-delight:firefly_briar_covered_land", // 萤息灌木（高频率生成）
-                "wildernesss-delight:firefly_briar_covered_grass", // 萤息灌木（草频率版，每区块必触发）
+                "wildernesss-delight:firefly_briar_covered_grass", // 萤息灌木（草频率版，每区块5簇，取代原版低矮草）
                 "wildernesss-delight:foxtail_grass_covered_land", // 狗尾巴草
                 "wildernesss-delight:horseweed_covered_land",    // 飞蓬草
                 "wildernesss-delight:mugwort_sprout_covered_land", // 蒌蒿
@@ -165,12 +173,127 @@ public class Modbiomes {
                 .spawnSettings(spawnSettings.build())          // 生物生成
                 .generationSettings(generationSettings.build()) // 地物生成
                 .build());
+
+        bootstrapLushMeadow(biomeRegisterable, placedFeatureLookup, carverLookup);
+    }
+
+    /**
+     * 繁茂草甸：地物/生物/视觉效果几乎照抄原版草甸（meadow），
+     * 但植被阶段加入了原版矮草和模组野菜，让草甸更「繁茂」。
+     */
+    private static void bootstrapLushMeadow(Registerable<Biome> biomeRegisterable,
+                                            RegistryEntryLookup<PlacedFeature> placedFeatureLookup,
+                                            RegistryEntryLookup<ConfiguredCarver<?>> carverLookup) {
+        GenerationSettings.LookupBackedBuilder generationSettings = new GenerationSettings.LookupBackedBuilder(placedFeatureLookup, carverLookup);
+
+        // 洞穴雕刻：与原版草甸一致
+        generationSettings.carver(GenerationStep.Carver.AIR,
+                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, new Identifier("minecraft:cave")));
+        generationSettings.carver(GenerationStep.Carver.AIR,
+                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, new Identifier("minecraft:cave_extra_underground")));
+        generationSettings.carver(GenerationStep.Carver.AIR,
+                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, new Identifier("minecraft:canyon")));
+
+        // 1.lakes 阶段
+        addFeature(generationSettings, GenerationStep.Feature.LAKES,
+                "minecraft:lake_lava_underground", "minecraft:lake_lava_surface");
+        // 2.local_modifications 阶段：紫水晶洞
+        addFeature(generationSettings, GenerationStep.Feature.LOCAL_MODIFICATIONS, "minecraft:amethyst_geode");
+        // 3.underground_structures 阶段：地牢（怪物房、深怪房）
+        addFeature(generationSettings, GenerationStep.Feature.UNDERGROUND_STRUCTURES,
+                "minecraft:monster_room", "minecraft:monster_room_deep");
+        // 6.underground_ores 阶段：草甸全套矿物（含山地特产浅层绿宝石矿）
+        addFeature(generationSettings, GenerationStep.Feature.UNDERGROUND_ORES,
+                "minecraft:ore_dirt", "minecraft:ore_gravel",
+                "minecraft:ore_granite_upper", "minecraft:ore_granite_lower",
+                "minecraft:ore_diorite_upper", "minecraft:ore_diorite_lower",
+                "minecraft:ore_andesite_upper", "minecraft:ore_andesite_lower",
+                "minecraft:ore_tuff",
+                "minecraft:ore_coal_upper", "minecraft:ore_coal_lower",
+                "minecraft:ore_iron_upper", "minecraft:ore_iron_middle", "minecraft:ore_iron_small",
+                "minecraft:ore_gold", "minecraft:ore_gold_lower",
+                "minecraft:ore_redstone", "minecraft:ore_redstone_lower",
+                "minecraft:ore_diamond", "minecraft:ore_diamond_large", "minecraft:ore_diamond_buried",
+                "minecraft:ore_lapis", "minecraft:ore_lapis_buried",
+                "minecraft:ore_copper",
+                "minecraft:underwater_magma",
+                "minecraft:disk_sand", "minecraft:disk_clay", "minecraft:disk_gravel",
+                "minecraft:ore_emerald");
+        // 7.underground_decoration 阶段：虫蚀石块（山地特有）
+        addFeature(generationSettings, GenerationStep.Feature.UNDERGROUND_DECORATION, "minecraft:ore_infested");
+        // 8.fluid_springs（泉）阶段
+        addFeature(generationSettings, GenerationStep.Feature.FLUID_SPRINGS,
+                "minecraft:spring_water", "minecraft:spring_lava");
+        // 9.vegetal_decoration 植被阶段：草甸高草/繁花/树木 + 原版矮草 + 模组野菜
+        // 共享原版地物相对顺序必须与原版草甸群系完全一致，否则触发 "Feature order cycle"
+        addFeature(generationSettings, GenerationStep.Feature.VEGETAL_DECORATION,
+                "minecraft:glow_lichen",            // 洞穴发光地衣
+                "minecraft:patch_tall_grass_2",    // 草甸高草
+                "minecraft:patch_grass_plain",      // 原版矮草（繁茂感）
+                "minecraft:flower_meadow",          // 草甸繁花
+                "minecraft:trees_meadow",           // 草甸稀疏树木
+                // 模组野菜（按 feature id 字母序附加，避免相对顺序链不一致）
+                "wildernesss-delight:buttercup_covered_land",      // 石龙芮
+                "wildernesss-delight:crop_dandelion_covered_land", // 蒲公英
+                "wildernesss-delight:cudweed_covered_land",        // 鼠曲草
+                "wildernesss-delight:foxtail_grass_covered_land",  // 狗尾巴草
+                "wildernesss-delight:horseweed_covered_land",      // 飞蓬草
+                "wildernesss-delight:mugwort_sprout_covered_land", // 蒌蒿
+                "wildernesss-delight:shepherd_purse_covered_land", // 荠菜
+                "wildernesss-delight:sprout_covered_land");        // 新芽
+        // 10.top_layer_modification 顶层阶段
+        addFeature(generationSettings, GenerationStep.Feature.TOP_LAYER_MODIFICATION, "minecraft:freeze_top_layer");
+
+        // 生物生成：原版草甸配属（羊/兔/驴）+ 标准夜怪
+        SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
+        spawnSettings.spawn(SpawnGroup.AMBIENT, new SpawnSettings.SpawnEntry(EntityType.BAT, 10, 8, 8));
+        spawnSettings.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.SHEEP, 2, 2, 4));
+        spawnSettings.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 2, 6));
+        spawnSettings.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.DONKEY, 1, 1, 2));
+        spawnSpawnMonsters(spawnSettings);
+        spawnSettings.spawn(SpawnGroup.UNDERGROUND_WATER_CREATURE,
+                new SpawnSettings.SpawnEntry(EntityType.GLOW_SQUID, 10, 4, 6));
+
+        // 视觉效果：原版草甸天/水色，草叶/树叶换成更深沉的繁茂绿
+        BiomeEffects effects = new BiomeEffects.Builder()
+                .fogColor(12638463)  // 淡雾
+                .waterColor(937679)  // 水色
+                .waterFogColor(329011)
+                .skyColor(8103167)   // 草甸淡蓝天空
+                .grassColor(8375149) // 繁茂草绿
+                .foliageColor(7196385)
+                .moodSound(BiomeMoodSound.CAVE)
+                .build();
+
+        // 注册繁茂草甸
+        biomeRegisterable.register(LUSH_MEADOW, new Biome.Builder()
+                .precipitation(true)  // 会降雨（高坡会有雪）
+                .temperature(0.5F)
+                .downfall(0.8F)
+                .effects(effects)
+                .spawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings.build())
+                .build());
     }
 
     /**
      * 小工具：把一批 placed feature 的 id（namespace:path，如 wildernesss-delight:horseweed_covered_land）
      * 批量添加到指定生成阶段。
      */
+    /**
+     * 标准夜怪群：蜘蛛/僵尸/骷髅/苦力怕/史莱姆 + 稀有的末影人/女巫
+     */
+    private static void spawnSpawnMonsters(SpawnSettings.Builder spawnSettings) {
+        spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.SPIDER, 100, 4, 4));
+        spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.ZOMBIE, 95, 4, 4));
+        spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.ZOMBIE_VILLAGER, 5, 1, 1));
+        spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.SKELETON, 100, 4, 4));
+        spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.CREEPER, 100, 4, 4));
+        spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.SLIME, 100, 4, 4));
+        spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.ENDERMAN, 10, 1, 4));
+        spawnSettings.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.WITCH, 5, 1, 1));
+    }
+
     private static void addFeature(GenerationSettings.LookupBackedBuilder builder, GenerationStep.Feature step, String... ids) {
         for (String id : ids) {
             // RegistryKey.of 将字符串 id 转成注册键，Lookup 再解析成真实的注册条目

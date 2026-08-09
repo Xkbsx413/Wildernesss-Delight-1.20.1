@@ -38,6 +38,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> LINGZHI_COVERED = of("lingzhi_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> HERICIUM_COVERED = of("hericium_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FIREFLY_BRIAR_COVERED = of("firefly_briar_covered");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FIREFLY_BRIAR_GRASS_COVERED = of("firefly_briar_grass_covered");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SPROUT_COVERED = of("sprout_covered");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHINESE_TOON_SMALL_TREE = of("chinese_toon_small_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHINESE_TOON_NORMAL_TREE = of("chinese_toon_normal_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TREE_OF_HEAVEN_SMALL_TREE = of("tree_of_heaven_small_tree");
@@ -66,6 +68,14 @@ public class ModConfiguredFeatures {
         register(featureRegisterable, HERICIUM_COVERED, ModBlock.HERICIUM, 8);
         // 萤息灌木：tries=20，一簇内植株比其他植物(6-10)更密
         register(featureRegisterable, FIREFLY_BRIAR_COVERED, ModBlock.FIREFLY_BRIAR, 20);
+        // 萤息灌木（草频率版配置）：完整复刻原版 patch_grass_plain 的随机草甸参数（tries=96, xz_spread=7），
+        // 供草频率版 placed feature 使用，以原版低矮草的密度铺满地面
+        ConfiguredFeatures.register(featureRegisterable, FIREFLY_BRIAR_GRASS_COVERED, Feature.FLOWER,
+                new RandomPatchFeatureConfig(96, 7, 3,
+                        PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                                new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlock.FIREFLY_BRIAR)))));
+        // 新芽：比一般野菜稍疏的一簇（tries=6），作为繁茂草甸的「新生」点缀
+        register(featureRegisterable, SPROUT_COVERED, ModBlock.SPROUT, 6);
 
         ConfiguredFeatures.register(featureRegisterable, CHINESE_TOON_SMALL_TREE, Feature.TREE,
                 new TreeFeatureConfig.Builder(

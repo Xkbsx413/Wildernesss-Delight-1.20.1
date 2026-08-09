@@ -40,6 +40,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> HERICIUM_COVERED_LAND = of("hericium_covered_land");
     public static final RegistryKey<PlacedFeature> FIREFLY_BRIAR_COVERED_LAND = of("firefly_briar_covered_land");
     public static final RegistryKey<PlacedFeature> FIREFLY_BRIAR_COVERED_GRASS = of("firefly_briar_covered_grass");
+    public static final RegistryKey<PlacedFeature> SPROUT_COVERED_LAND = of("sprout_covered_land");
     public static final RegistryKey<PlacedFeature> CHINESE_TOON_SMALL_TREE_LAND = of("chinese_toon_small_tree_land");
     public static final RegistryKey<PlacedFeature> CHINESE_TOON_NORMAL_TREE_LAND = of("chinese_toon_normal_tree_land");
     public static final RegistryKey<PlacedFeature> TREE_OF_HEAVEN_SMALL_TREE_LAND = of("tree_of_heaven_small_tree_land");
@@ -70,13 +71,15 @@ public class ModPlacedFeatures {
         register(featureRegisterable, lookup, HERICIUM_COVERED_LAND, ModConfiguredFeatures.HERICIUM_COVERED, 7);
         // 萤息灌木：稀有度 2（其他植物为 7），生成频率约是其 3.5 倍
         register(featureRegisterable, lookup, FIREFLY_BRIAR_COVERED_LAND, ModConfiguredFeatures.FIREFLY_BRIAR_COVERED, 2);
-        // 萤息灌木（草频率版）：模仿原版 patch_grass_plain 的放置方式，每个区块必触发
+        // 萤息灌木（草频率版）：每区块 5 簇，取代原版低矮草
         PlacedFeatures.register(featureRegisterable, FIREFLY_BRIAR_COVERED_GRASS,
-                lookup.getOrThrow(ModConfiguredFeatures.FIREFLY_BRIAR_COVERED),
-                CountPlacementModifier.of(1),
+                lookup.getOrThrow(ModConfiguredFeatures.FIREFLY_BRIAR_GRASS_COVERED),
+                CountPlacementModifier.of(5),
                 SquarePlacementModifier.of(),
                 HeightmapPlacementModifier.of(Heightmap.Type.WORLD_SURFACE_WG),
                 BiomePlacementModifier.of());
+        // 新芽：稀有度 6（比常见野菜的 7 略频繁一些）
+        register(featureRegisterable, lookup, SPROUT_COVERED_LAND, ModConfiguredFeatures.SPROUT_COVERED, 6);
         PlacedFeatures.register(featureRegisterable, CHINESE_TOON_SMALL_TREE_LAND,
                 lookup.getOrThrow(ModConfiguredFeatures.CHINESE_TOON_SMALL_TREE),
                 RarityFilterPlacementModifier.of(6),

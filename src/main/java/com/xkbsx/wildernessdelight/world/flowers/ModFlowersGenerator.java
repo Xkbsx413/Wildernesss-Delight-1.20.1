@@ -80,5 +80,9 @@ public class ModFlowersGenerator {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(
                 BiomeKeys.FLOWER_FOREST, BiomeKeys.WINDSWEPT_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TREE_OF_HEAVEN_NORMAL_TREE_LAND);
+        // 新芽：仅生成于原版森林（forest），其他群系不生成
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(
+                BiomeKeys.FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SPROUT_COVERED_LAND);
     }
 }
