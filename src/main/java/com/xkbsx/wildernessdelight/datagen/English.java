@@ -178,6 +178,8 @@ public class English extends FabricLanguageProvider {
             translationBuilder.add("advancement.wildernesss-delight.refreshing.desc", "§aEat a mint leaf and feel the cool refreshment");
             translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.title", "§eGrass Lures Wolf");
             translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.desc", "§eObtain the Fluffy Tail effect and let wolves follow your trail");
+            translationBuilder.add("advancement.wildernesss-delight.firefly_meadow.title", "§eGlimmering Wilds");
+            translationBuilder.add("advancement.wildernesss-delight.firefly_meadow.desc", "§7Step into the firefly-lit meadow for the first time");
 
         translationBuilder.add(ModBlock.WILDERNESS_BANNER, "Wilderness Banner");
         translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line1", "Reward for completing all dishes");

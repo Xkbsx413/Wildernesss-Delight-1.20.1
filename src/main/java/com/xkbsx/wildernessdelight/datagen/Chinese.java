@@ -178,6 +178,8 @@ public class Chinese extends FabricLanguageProvider {
         translationBuilder.add("advancement.wildernesss-delight.refreshing.desc", "§a吃下一片薄荷叶，感受清凉舒爽");
         translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.title", "§e草引狼踪");
         translationBuilder.add("advancement.wildernesss-delight.grass_wolf_trail.desc", "§e获得绒尾效果，让狼群追随你的足迹");
+        translationBuilder.add("advancement.wildernesss-delight.firefly_meadow.title", "§e微光旷野");
+        translationBuilder.add("advancement.wildernesss-delight.firefly_meadow.desc", "§e初次踏入萤火摇曳的原野");
 
         translationBuilder.add(ModBlock.WILDERNESS_BANNER, "§e全物品收集者旗帜 : §a原野拾穗");
         translationBuilder.add("tooltip.wildernesss-delight.wilderness_banner.line1", "烹饪所有菜品获得的奖励");

@@ -1,14 +1,18 @@
 package com.xkbsx.wildernessdelight.datagen;
 
+import com.xkbsx.wildernessdelight.block.ModBlock;
 import com.xkbsx.wildernessdelight.item.ModItems;
 import com.xkbsx.wildernessdelight.potion.ModPotions;
+import com.xkbsx.wildernessdelight.world.biome.Modbiomes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.AdvancementRewards;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
+import net.minecraft.advancement.criterion.TickCriterion;
 import net.minecraft.item.Items;
+import net.minecraft.predicate.entity.LocationPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -192,5 +196,16 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                                 .build()))
                 .requirements(new String[][]{{"fluffy_tail", "fluffy_tail_long", "fluffy_tail_strong"}})
                 .build(exporter, "wildernesss-delight:grass_wolf_trail");
+
+        Advancement.Builder.create()
+                .parent(root)
+                .display(ModBlock.FIREFLY_BRIAR,
+                        Text.translatable("advancement.wildernesss-delight.firefly_meadow.title"),
+                        Text.translatable("advancement.wildernesss-delight.firefly_meadow.desc"),
+                        null, AdvancementFrame.TASK, true, true, false)
+                .rewards(AdvancementRewards.Builder.experience(100).build())
+                .criterion("enter_firefly_meadow", TickCriterion.Conditions.createLocation(
+                        LocationPredicate.Builder.create().biome(Modbiomes.FIREFLY_MEADOW).build()))
+                .build(exporter, "wildernesss-delight:firefly_meadow");
     }
 }

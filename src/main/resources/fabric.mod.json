@@ -3,6 +3,7 @@
 	"id": "wildernesss-delight",
 	"version": "${version}",
 	"name": "Wilderness's Delight",
+
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Xkbsx"
