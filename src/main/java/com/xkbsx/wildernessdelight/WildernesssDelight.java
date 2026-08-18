@@ -10,9 +10,10 @@ import com.xkbsx.wildernessdelight.potion.ModPotions;
 import com.xkbsx.wildernessdelight.world.tree.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
-import net.minecraft.recipe.BrewingRecipeRegistry;
+import net.minecraft.registry.Registries;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,9 +35,11 @@ public class WildernesssDelight implements ModInitializer {
 		ModEffects.register();
 		ModPotions.register();
 		ModWorldGeneration.register();
-		BrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, ModItems.FOXTAIL_GRASS, ModPotions.FLUFFY_TAIL);
-		BrewingRecipeRegistry.registerPotionRecipe(ModPotions.FLUFFY_TAIL, Items.REDSTONE, ModPotions.FLUFFY_TAIL_LONG);
-		BrewingRecipeRegistry.registerPotionRecipe(ModPotions.FLUFFY_TAIL, Items.GLOWSTONE_DUST, ModPotions.FLUFFY_TAIL_STRONG);
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD, ModItems.FOXTAIL_GRASS, Registries.POTION.getEntry(ModPotions.FLUFFY_TAIL));
+			builder.registerPotionRecipe(Registries.POTION.getEntry(ModPotions.FLUFFY_TAIL), Items.REDSTONE, Registries.POTION.getEntry(ModPotions.FLUFFY_TAIL_LONG));
+			builder.registerPotionRecipe(Registries.POTION.getEntry(ModPotions.FLUFFY_TAIL), Items.GLOWSTONE_DUST, Registries.POTION.getEntry(ModPotions.FLUFFY_TAIL_STRONG));
+		});
 
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
 			FluffyTailEffect.removeSummonedWolves(handler.player));

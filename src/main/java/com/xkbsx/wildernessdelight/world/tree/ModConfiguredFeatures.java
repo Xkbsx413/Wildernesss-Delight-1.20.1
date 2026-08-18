@@ -123,6 +123,6 @@ public class ModConfiguredFeatures {
     }
 
     private static RegistryKey<ConfiguredFeature<?, ?>> of(String id) {
-        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(WildernesssDelight.MOD_ID, id));
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(WildernesssDelight.MOD_ID, id));
     }
 }

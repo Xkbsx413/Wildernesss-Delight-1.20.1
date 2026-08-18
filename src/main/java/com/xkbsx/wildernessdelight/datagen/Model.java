@@ -21,7 +21,7 @@ public class Model extends FabricModelProvider {
                                 .coordinate(BlockStateVariantMap.create(HorseweedCropBlock.AGE)
                                                 .register(stage -> {
                                                     int textureStage = stage % 5;
-                                                    Identifier textureId = new Identifier(WildernesssDelight.MOD_ID, "block/horseweedblock_stage" + textureStage);
+                                                    Identifier textureId = Identifier.of(WildernesssDelight.MOD_ID, "block/horseweedblock_stage" + textureStage);
                                                     return BlockStateVariant.create()
                                                                     .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlock.HORSEWEEDBLOCK, "_stage" + stage,
                                                                              Models.CROSS, (id) -> TextureMap.cross(textureId)));

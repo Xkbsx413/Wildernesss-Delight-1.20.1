@@ -3,13 +3,16 @@ package com.xkbsx.wildernessdelight.datagen;
 import com.xkbsx.wildernessdelight.block.ModBlock;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.registry.RegistryWrapper;
+
+import java.util.concurrent.CompletableFuture;
 
 public class English extends FabricLanguageProvider {
-    public English(FabricDataOutput dataOutput) {
-        super(dataOutput, "en_us");
+    public English(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(dataOutput, "en_us", registryLookup);
     }
     @Override
-    public void generateTranslations(TranslationBuilder translationBuilder) {
+    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
            translationBuilder.add(ModBlock.HORSEWEEDBLOCK,"horseweed");
            translationBuilder.add("item.wildernesss-delight.horseweed","horseweed");
            translationBuilder.add(ModBlock.SHEPHERD_PURSE,"wild shepherd purse");

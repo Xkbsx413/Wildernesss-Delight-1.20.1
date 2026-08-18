@@ -7,30 +7,41 @@ import com.xkbsx.wildernessdelight.world.biome.Modbiomes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.Advancement;
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.advancement.AdvancementFrame;
+import net.minecraft.advancement.AdvancementRequirements;
 import net.minecraft.advancement.AdvancementRewards;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.advancement.criterion.TickCriterion;
 import net.minecraft.item.Items;
 import net.minecraft.predicate.entity.LocationPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.predicate.item.ItemSubPredicateTypes;
+import net.minecraft.predicate.item.PotionContentsPredicate;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class ModAdvancementProvider extends FabricAdvancementProvider {
-    public ModAdvancementProvider(FabricDataOutput output) {
-        super(output);
+    public ModAdvancementProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(output, registryLookup);
     }
 
     @Override
-    public void generateAdvancement(Consumer<Advancement> exporter) {
-        Advancement root = Advancement.Builder.create()
+    public void generateAdvancement(RegistryWrapper.WrapperLookup registryLookup, Consumer<AdvancementEntry> exporter) {
+        AdvancementEntry root = Advancement.Builder.create()
                 .display(ModItems.SHEPHERD_PURSE,
                         Text.translatable("advancement.wildernesss-delight.root.title"),
                         Text.translatable("advancement.wildernesss-delight.root.desc"),
-                        new Identifier("textures/gui/advancements/backgrounds/husbandry.png"),
+                        Identifier.of("textures/gui/advancements/backgrounds/husbandry.png"),
                         AdvancementFrame.TASK, false, false, false)
                 .criterion("pickup", InventoryChangedCriterion.Conditions.items(new net.minecraft.item.Item[0]))
                 .build(exporter, "wildernesss-delight:root");
@@ -69,7 +80,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("buttercup", InventoryChangedCriterion.Conditions.items(ModItems.BUTTERCUP))
                 .build(exporter, "wildernesss-delight:toxicologist");
 
-        Advancement cook = Advancement.Builder.create()
+        AdvancementEntry cook = Advancement.Builder.create()
                 .parent(root)
                 .display(ModItems.COOKED_BRACKEN_FERN_SHOOT,
                         Text.translatable("advancement.wildernesss-delight.cook.title"),
@@ -83,7 +94,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                                 ModItems.COOKED_WATER_DROPWORT).build()))
                 .build(exporter, "wildernesss-delight:cook");
 
-        Advancement chef = Advancement.Builder.create()
+        AdvancementEntry chef = Advancement.Builder.create()
                 .parent(cook)
                 .display(ModItems.CHINESE_TOON_SCRAMBLED_EGGS,
                         Text.translatable("advancement.wildernesss-delight.chef.title"),
@@ -105,7 +116,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                                 ModItems.LINGZHI_CHICKEN_SOUP, ModItems.HUNDRED_HERBS_DELICACY).build()))
                 .build(exporter, "wildernesss-delight:chef");
 
-        Advancement hundred_herbs = Advancement.Builder.create()
+        AdvancementEntry hundred_herbs = Advancement.Builder.create()
                 .parent(chef)
                 .display(ModItems.HUNDRED_HERBS_DELICACY,
                         Text.translatable("advancement.wildernesss-delight.hundred_herbs.title"),
@@ -123,7 +134,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         null, AdvancementFrame.CHALLENGE, true, true, false)
                 .rewards(new AdvancementRewards.Builder()
                         .setExperience(800)
-                        .addLoot(new Identifier("wildernesss-delight", "advancements/feast_reward"))
+                        .addLoot(RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.of("wildernesss-delight", "advancements/feast_reward")))
                         .build())
                 .criterion("chinese_toon_scrambled_eggs", InventoryChangedCriterion.Conditions.items(ModItems.CHINESE_TOON_SCRAMBLED_EGGS))
                 .criterion("shepherd_purse_dumplings", InventoryChangedCriterion.Conditions.items(ModItems.SHEPHERD_PURSE_DUMPLINGS))
@@ -182,19 +193,19 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("fluffy_tail", InventoryChangedCriterion.Conditions.items(
                         ItemPredicate.Builder.create()
                                 .items(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION)
-                                .potion(ModPotions.FLUFFY_TAIL)
+                                .subPredicate(ItemSubPredicateTypes.POTION_CONTENTS, (PotionContentsPredicate) PotionContentsPredicate.potionContents(RegistryEntryList.of(Registries.POTION.getEntry(ModPotions.FLUFFY_TAIL))))
                                 .build()))
                 .criterion("fluffy_tail_long", InventoryChangedCriterion.Conditions.items(
                         ItemPredicate.Builder.create()
                                 .items(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION)
-                                .potion(ModPotions.FLUFFY_TAIL_LONG)
+                                .subPredicate(ItemSubPredicateTypes.POTION_CONTENTS, (PotionContentsPredicate) PotionContentsPredicate.potionContents(RegistryEntryList.of(Registries.POTION.getEntry(ModPotions.FLUFFY_TAIL_LONG))))
                                 .build()))
                 .criterion("fluffy_tail_strong", InventoryChangedCriterion.Conditions.items(
                         ItemPredicate.Builder.create()
                                 .items(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION)
-                                .potion(ModPotions.FLUFFY_TAIL_STRONG)
+                                .subPredicate(ItemSubPredicateTypes.POTION_CONTENTS, (PotionContentsPredicate) PotionContentsPredicate.potionContents(RegistryEntryList.of(Registries.POTION.getEntry(ModPotions.FLUFFY_TAIL_STRONG))))
                                 .build()))
-                .requirements(new String[][]{{"fluffy_tail", "fluffy_tail_long", "fluffy_tail_strong"}})
+                .requirements(AdvancementRequirements.anyOf(List.of("fluffy_tail", "fluffy_tail_long", "fluffy_tail_strong")))
                 .build(exporter, "wildernesss-delight:grass_wolf_trail");
 
         Advancement.Builder.create()
@@ -205,7 +216,8 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         null, AdvancementFrame.TASK, true, true, false)
                 .rewards(AdvancementRewards.Builder.experience(100).build())
                 .criterion("enter_firefly_meadow", TickCriterion.Conditions.createLocation(
-                        LocationPredicate.Builder.create().biome(Modbiomes.FIREFLY_MEADOW).build()))
+                        LocationPredicate.Builder.create()
+                                .biome(RegistryEntryList.of(registryLookup.getWrapperOrThrow(RegistryKeys.BIOME).getOrThrow(Modbiomes.FIREFLY_MEADOW)))))
                 .build(exporter, "wildernesss-delight:firefly_meadow");
     }
 }

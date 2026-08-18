@@ -30,7 +30,7 @@ public class Modbiomes {
      * 填 ModId + 群系名，供 TerraBlender 替换地块（replaceBiome）和生物改造（BiomeModifications）引用。
      */
     public static final RegistryKey<Biome> FIREFLY_MEADOW = RegistryKey.of(RegistryKeys.BIOME,
-            new Identifier(WildernesssDelight.MOD_ID, "firefly_meadow"));
+            Identifier.of(WildernesssDelight.MOD_ID, "firefly_meadow"));
 
     /**
      * 繁茂草甸 (Lush Meadow)：
@@ -38,7 +38,7 @@ public class Modbiomes {
      * 额外撒上原版矮草并铺满模组野菜，整体比原版草甸更加郁郁葱葱。
      */
     public static final RegistryKey<Biome> LUSH_MEADOW = RegistryKey.of(RegistryKeys.BIOME,
-            new Identifier(WildernesssDelight.MOD_ID, "lush_meadow"));
+            Identifier.of(WildernesssDelight.MOD_ID, "lush_meadow"));
 
     /**
      * datagen 引导入口：在 buildRegistry 阶段被 Fabric API 调用，
@@ -57,15 +57,15 @@ public class Modbiomes {
 
         // 阶段：洞穴雕刻 —— 空气类的三个原版洞穴逐层挖空地下
         generationSettings.carver(GenerationStep.Carver.AIR,
-                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, new Identifier("minecraft:cave")));
+                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, Identifier.of("minecraft:cave")));
         // 深层附加洞穴（Y 较深处的额外洞穴）
         generationSettings.carver(GenerationStep.Carver.AIR,
-                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, new Identifier("minecraft:cave_extra_underground")));
+                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, Identifier.of("minecraft:cave_extra_underground")));
         // 峡谷
         generationSettings.carver(GenerationStep.Carver.AIR,
-                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, new Identifier("minecraft:canyon")));
+                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, Identifier.of("minecraft:canyon")));
 
-        /**
+        /*
          * 以下为 11 个生成阶段的依次塞入：
          * RAWS 原样照抄原版草原（plains）表中的内容，保证萤火原野的地下/矿物资源和原版一致。
          */
@@ -188,11 +188,11 @@ public class Modbiomes {
 
         // 洞穴雕刻：与原版草甸一致
         generationSettings.carver(GenerationStep.Carver.AIR,
-                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, new Identifier("minecraft:cave")));
+                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, Identifier.of("minecraft:cave")));
         generationSettings.carver(GenerationStep.Carver.AIR,
-                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, new Identifier("minecraft:cave_extra_underground")));
+                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, Identifier.of("minecraft:cave_extra_underground")));
         generationSettings.carver(GenerationStep.Carver.AIR,
-                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, new Identifier("minecraft:canyon")));
+                RegistryKey.of(RegistryKeys.CONFIGURED_CARVER, Identifier.of("minecraft:canyon")));
 
         // 1.lakes 阶段
         addFeature(generationSettings, GenerationStep.Feature.LAKES,
@@ -276,11 +276,11 @@ public class Modbiomes {
                 .build());
     }
 
-    /**
+    /*
      * 小工具：把一批 placed feature 的 id（namespace:path，如 wildernesss-delight:horseweed_covered_land）
      * 批量添加到指定生成阶段。
-     */
-    /**
+     *
+     *
      * 标准夜怪群：蜘蛛/僵尸/骷髅/苦力怕/史莱姆 + 稀有的末影人/女巫
      */
     private static void spawnSpawnMonsters(SpawnSettings.Builder spawnSettings) {
@@ -297,7 +297,7 @@ public class Modbiomes {
     private static void addFeature(GenerationSettings.LookupBackedBuilder builder, GenerationStep.Feature step, String... ids) {
         for (String id : ids) {
             // RegistryKey.of 将字符串 id 转成注册键，Lookup 再解析成真实的注册条目
-            builder.feature(step, RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(id)));
+            builder.feature(step, RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(id)));
         }
     }
 }

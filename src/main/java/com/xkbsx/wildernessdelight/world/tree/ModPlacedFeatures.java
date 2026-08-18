@@ -125,6 +125,6 @@ public class ModPlacedFeatures {
     }
 
     private static RegistryKey<PlacedFeature> of(String id) {
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(WildernesssDelight.MOD_ID, id));
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(WildernesssDelight.MOD_ID, id));
     }
 }
