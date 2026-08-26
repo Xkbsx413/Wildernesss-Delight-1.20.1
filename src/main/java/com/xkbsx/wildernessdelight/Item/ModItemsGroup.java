@@ -108,7 +108,7 @@ public class ModItemsGroup {
     public static void RegisterGroups() {
         Registry.register(
                 Registries.ITEM_GROUP,
-                new Identifier(WildernesssDelight.MOD_ID, "wilderness_delight"),
+                Identifier.of(WildernesssDelight.MOD_ID, "wilderness_delight"),
                 Wilderness_Delight
         );
     }

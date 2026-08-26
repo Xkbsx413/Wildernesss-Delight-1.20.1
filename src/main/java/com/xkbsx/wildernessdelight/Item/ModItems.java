@@ -136,6 +136,6 @@ public class ModItems {
         if (item instanceof BlockItem) {
             ((BlockItem)item).appendBlocks(Item.BLOCK_ITEMS, item);
         }
-        return Registry.register(Registries.ITEM, new Identifier(WildernesssDelight.MOD_ID, id), item);
+        return Registry.register(Registries.ITEM, Identifier.of(WildernesssDelight.MOD_ID, id), item);
     }
 }
